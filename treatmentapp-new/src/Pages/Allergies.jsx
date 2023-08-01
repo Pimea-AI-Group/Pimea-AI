@@ -5,7 +5,7 @@ const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Im
 
 
 const catImg = () => {
-    const catImageUrl = { imagesUrl } + 'Allergies/Cat.jpg';
+    const catImageUrl = { imageUrl } + 'Allergies/Cat.jpg';
     return (
         <div>
           <img src={ catImageUrl } alt="Image from S3" />
@@ -14,7 +14,7 @@ const catImg = () => {
 }
 
 const dogImg = () => {
-    const dogImageUrl = { imagesUrl } + 'Allergies/Dog.jpg';
+    const dogImageUrl = { imageUrl } + 'Allergies/Dog.jpg';
     return (
         <div>
           <img src={ dogImageUrl } alt="Image from S3" />
@@ -23,7 +23,7 @@ const dogImg = () => {
 }
 
 const grassImg = () => {
-    const grassImageUrl = { imagesUrl } + 'Allergies/Grass.jpg';
+    const grassImageUrl = { imageUrl } + 'Allergies/Grass.jpg';
     return (
         <div>
           <img src={ grassImageUrl } alt="Image from S3" />
@@ -32,7 +32,7 @@ const grassImg = () => {
 }
 
 const dust_bunnyImg = () => {
-    const dust_bunnyImageUrl = { imagesUrl } + 'Allergies/DustBunny.jpg';
+    const dust_bunnyImageUrl = { imageUrl } + 'Allergies/DustBunny.jpg';
     return (
         <div>
           <img src={ dust_bunnyImageUrl } alt="Image from S3" />
@@ -41,7 +41,7 @@ const dust_bunnyImg = () => {
 }
 
 const hayFeverImg = () => {
-    const hayFeverImageUrl = { imagesUrl } + 'Allergies/Hay Fever.jpg';
+    const hayFeverImageUrl = { imageUrl } + 'Allergies/Hay Fever.jpg';
     return (
         <div>
           <img src={ hayFeverImageUrl } alt="Image from S3" />
@@ -50,7 +50,7 @@ const hayFeverImg = () => {
 }
 
 const pineBloomImg = () => {
-    const pineBloomImageUrl = { imagesUrl } + 'Allergies/Pine Bloom.jpg';
+    const pineBloomImageUrl = { imageUrl } + 'Allergies/Pine Bloom.jpg';
     return (
         <div>
           <img src={ pineBloomImageUrl } alt="Image from S3" />
@@ -59,7 +59,7 @@ const pineBloomImg = () => {
 }
 
 const latexImg = () => {
-    const latexImageUrl = { imagesUrl } + 'Allergies/Latex.jpg';
+    const latexImageUrl = { imageUrl } + 'Allergies/Latex.jpg';
     return (
         <div>
           <img src={ latexImageUrl } alt="Image from S3" />
