@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import catImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Cat.jpg';
+import catImg from './Cat.jpg';
 import dogImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Dog.jpg';
 import grassImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Grass.jpg';
 import dust_bunnyImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/DustBunny.jpg';
@@ -60,6 +60,11 @@ export default function Allergies() {
 
     return (
         <div>
+            <img src={catImg} alt="Cat" />
+            <img
+                src='https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Cat.jpg'
+                alt='Cat'
+            />
             <h1>באיזה אלרגיות תשמח שנטפל?</h1>
             <div className='allergyDiv'>
                 <label className='allergyCheckbox'>

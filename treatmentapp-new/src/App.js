@@ -4,7 +4,7 @@ import LogIn from './Pages/LogIn';
 import Treatment from './Pages/Treatment';
 import React, { useState } from 'react';
 import LandingPage from './Pages/LandingPage';
-import BackgroundMusic from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Background Music.mp3';
+import BackgroundMusic from './Background Music.mp3';
 import Allergies from './Pages/Allergies';
 import CalandlyLink from './Components/CalendlyLink';
 import AllergyInfo from './Pages/AllergyInfo';
@@ -14,6 +14,11 @@ function App() {
   return (
     <div id='appDiv'>
       <audio src={BackgroundMusic} controls />
+      <audio
+        src='https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Background Music.mp3'
+        alt="BackgroundMusic"
+      />
+
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
