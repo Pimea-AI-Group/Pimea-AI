@@ -1,0 +1,159 @@
+body {
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  background-color: #008CBA;
+  background-size: cover;
+}
+
+#appDiv {
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+input::placeholder{
+  font-size: large;
+  font-weight: 900;
+
+}
+
+label {
+  display: block;
+  margin: 15px 0;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.allergyCheckbox, .symptomsCheckbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  width: -webkit-fill-available;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 4px;
+  background: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+input {
+  width: -webkit-fill-available;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 4px;
+  background: none;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+input:hover{
+  cursor: text;
+  border: 5px solid black;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checkbox-image {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+button{
+  background: none;
+  border:none;
+  background-size: contain;
+}
+
+#submitBTN {
+  align-items: center;
+  padding: 10px;
+  background-color: #008CBA;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+#submitBTN{
+  background-color: green;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+.allergyDiv, .symptomsDiv, .Anti-Allergens-Div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.allergyButton{
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+}
+
+/* Admin.css */
+
+.admin-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.admin-form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.user-data {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.user-data h2 {
+  margin-bottom: 10px;
+}
+
+.user-data p {
+  margin-bottom: 5px;
+}
