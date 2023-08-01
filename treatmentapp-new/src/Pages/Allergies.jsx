@@ -1,14 +1,72 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
-const catImg = { imagesUrl } + 'Allergies//Cat.jpg';
-const dogImg = { imagesUrl } + 'Allergies/Dog.jpg';
-const grassImg = { imagesUrl } + 'Allergies/Grass.jpg';
-const dust_bunnyImg = { imagesUrl } + 'Allergies/DustBunny.jpg';
-const pineBloomImg = { imagesUrl } + 'Allergies/Pine Bloom.jpg';
-const latexImg = { imagesUrl } + 'Allergies/Latex.jpg';
-const hayFeverImg = { imagesUrl } + 'Allergies/Hay Fever.jpg';
+const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
+
+
+const catImg = () => {
+    const catImageUrl = { imagesUrl } + 'Allergies/Cat.jpg';
+    return (
+        <div>
+          <img src={ catImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const dogImg = () => {
+    const dogImageUrl = { imagesUrl } + 'Allergies/Dog.jpg';
+    return (
+        <div>
+          <img src={ dogImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const grassImg = () => {
+    const grassImageUrl = { imagesUrl } + 'Allergies/Grass.jpg';
+    return (
+        <div>
+          <img src={ grassImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const dust_bunnyImg = () => {
+    const dust_bunnyImageUrl = { imagesUrl } + 'Allergies/DustBunny.jpg';
+    return (
+        <div>
+          <img src={ dust_bunnyImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const hayFeverImg = () => {
+    const hayFeverImageUrl = { imagesUrl } + 'Allergies/Hay Fever.jpg';
+    return (
+        <div>
+          <img src={ hayFeverImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const pineBloomImg = () => {
+    const pineBloomImageUrl = { imagesUrl } + 'Allergies/Pine Bloom.jpg';
+    return (
+        <div>
+          <img src={ pineBloomImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
+const latexImg = () => {
+    const latexImageUrl = { imagesUrl } + 'Allergies/Latex.jpg';
+    return (
+        <div>
+          <img src={ latexImageUrl } alt="Image from S3" />
+        </div>
+      );
+}
+
 
 export default function Allergies() {
     const nav = useNavigate();
