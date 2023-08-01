@@ -1,3 +1,4 @@
 .DS_Store
 **/*.mp3
 **/*.jpg
+!treatmentapp-new/src/Sound/Background Music.mp3
