@@ -10,11 +10,15 @@ import AllergyInfo from './Pages/AllergyInfo';
 import Admin from './Pages/Admin';
 
 const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
-const BackgroundMusic = { imagesUrl } + 'Background Music.mp3';
+const BackgroundImg = { imagesUrl } + 'Background Music.mp3';
+
+const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
+const BackgroundAudio =  { audioUrl } + 'Background Music.mp3';
 
 function App() {
   return (
-    <div id='appDiv'>
+    <div id='appDiv' style={{backgroundImage: BackgroundImg}}>
+      <audio>BackgroundAudio</audio>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
