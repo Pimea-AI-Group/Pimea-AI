@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import catImg from '../Images/Allergies/Cat.jpg';
-import dogImg from '../Images/Allergies/Dog.jpg';
-import grassImg from '../Images/Allergies/Grass.jpg';
-import dust_bunnyImg from '../Images/Allergies/DustBunny.jpg';
-import pineBloomImg from '../Images/Allergies/Pine Bloom.jpg';
-import latexImg from '../Images/Allergies/Latex.jpg';
-import hayFeverImg from '../Images/Allergies/Hay Fever.jpg';
+import catImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Cat.jpg';
+import dogImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Dog.jpg';
+import grassImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Grass.jpg';
+import dust_bunnyImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/DustBunny.jpg';
+import pineBloomImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Pine Bloom.jpg';
+import latexImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Latex.jpg';
+import hayFeverImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Hay Fever.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Allergies() {

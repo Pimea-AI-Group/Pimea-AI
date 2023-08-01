@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
-import Coughing from '../Images/Symptoms/Coughing.jpg'
-import Fatigue from '../Images/Symptoms/Fatigue.jpg'
-import Headache from '../Images/Symptoms/Headache.jpg'
-import Itching from '../Images/Symptoms/Itching.jpg'
-import Eyes from '../Images/Symptoms/Eyes.jpg'
-import Nausea from '../Images/Symptoms/Nausea.jpg'
-import Nose from '../Images/Symptoms/Nose.jpg'
-import SkinRash from '../Images/Symptoms/Skin Rash.jpg'
-import Swelling from '../Images/Symptoms/Swelling.jpg'
-import Vomiting from '../Images/Symptoms/Vomiting.jpg'
-import Breath from '../Images/Symptoms/Breath.jpg'
+import Coughing from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Coughing.jpg'
+import Fatigue from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Fatigue.jpg'
+import Headache from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Headache.jpg'
+import Itching from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Itching.jpg'
+import Eyes from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Eyes.jpg'
+import Nausea from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Nausea.jpg'
+import Nose from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Nose.jpg'
+import SkinRash from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Skin Rash.jpg'
+import Swelling from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Swelling.jpg'
+import Vomiting from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Vomiting.jpg'
+import Breath from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/Breath.jpg'
 
 export default function Symptoms(props) {
     const [checkedItems, setCheckedItems] = useState([]);

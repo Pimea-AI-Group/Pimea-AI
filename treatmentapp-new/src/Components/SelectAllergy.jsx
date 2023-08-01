@@ -1,13 +1,13 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import Cat from '../Images/Allergies/Cat.jpg';
-import Dog from '../Images/Allergies/Dog.jpg';
-import Grass from '../Images/Allergies/Grass.jpg';
-import DustMites from '../Images/Allergies/DustBunny.jpg';
-import PineBloom from '../Images/Allergies/Pine Bloom.jpg'
-import Latex from '../Images/Allergies/Latex.jpg'
-import HayFever from '../Images/Allergies/Hay Fever.jpg'
+import Cat from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Cat.jpg';
+import Dog from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Dog.jpg';
+import Grass from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Grass.jpg';
+import DustMites from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/DustBunny.jpg';
+import PineBloom from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Pine Bloom.jpg'
+import Latex from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Latex.jpg'
+import HayFever from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Hay Fever.jpg'
 
 export default function SelectAllergy(props) {
     const navigate = useNavigate();

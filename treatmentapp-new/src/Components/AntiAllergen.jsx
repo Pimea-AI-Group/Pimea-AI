@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 
-import AloeVeraIMG from '../Images/Anti Allergens/Aloe Vera.jpg';
-import AloeVeraSound from '../Sound/Anti-Allergen/Aloe Vera.mp3';
+import AloeVeraIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Aloe Vera.jpg';
+import AloeVeraSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Aloe Vera.mp3';
 
-import AvocadoTreeBlossomIMG from '../Images/Anti Allergens/Avocado Tree Blossom.jpg';
-import AvocadoTreeBlossomSound from '../Sound/Anti-Allergen/Avocado Tree Blossom.mp3';
+import AvocadoTreeBlossomIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Avocado Tree Blossom.jpg';
+import AvocadoTreeBlossomSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Avocado Tree Blossom.mp3';
 
-import BlackPepperIMG from '../Images/Anti Allergens/Black Pepper.jpg';
-import BlackPepperSound from '../Sound/Anti-Allergen/Black Pepper.mp3';
+import BlackPepperIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Black Pepper.jpg';
+import BlackPepperSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Black Pepper.mp3';
 
-import BunnyIMG from '../Images/Anti Allergens/Bunny.jpg';
-import BunnySound from '../Sound/Anti-Allergen/Bunny.mp3';
+import BunnyIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Bunny.jpg';
+import BunnySound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Bunny.mp3';
 
-import CarpetIMG from '../Images/Anti Allergens/Carpet.jpg';
-import CarpetSound from '../Sound/Anti-Allergen/Carpet.mp3';
+import CarpetIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Carpet.jpg';
+import CarpetSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Carpet.mp3';
 
 const antiAllergen = [
   { name: 'אלוורה', image: AloeVeraIMG, audio: AloeVeraSound },
