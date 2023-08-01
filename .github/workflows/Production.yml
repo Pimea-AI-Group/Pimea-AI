@@ -17,10 +17,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - name: Yarn Install
               run: yarn install
-              working-directory: ../treamentapp
             - name: Development Build
               run: yarn build
-              working-directory: ../treamentapp
             - name: Deploy to S3
               uses: jakejarvis/s3-sync-action@master
               env:
