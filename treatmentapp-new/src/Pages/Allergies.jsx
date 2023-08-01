@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import catImg from './Cat.jpg';
-import dogImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Dog.jpg';
-import grassImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Grass.jpg';
-import dust_bunnyImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/DustBunny.jpg';
-import pineBloomImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Pine Bloom.jpg';
-import latexImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Latex.jpg';
-import hayFeverImg from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Hay Fever.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
+const catImg = { imagesUrl } + 'Allergies//Cat.jpg';
+const dogImg = { imagesUrl } + 'Allergies/Dog.jpg';
+const grassImg = { imagesUrl } + 'Allergies/Grass.jpg';
+const dust_bunnyImg = { imagesUrl } + 'Allergies/DustBunny.jpg';
+const pineBloomImg = { imagesUrl } + 'Allergies/Pine Bloom.jpg';
+const latexImg = { imagesUrl } + 'Allergies/Latex.jpg';
+const hayFeverImg = { imagesUrl } + 'Allergies/Hay Fever.jpg';
 
 export default function Allergies() {
     const nav = useNavigate();
@@ -60,11 +62,6 @@ export default function Allergies() {
 
     return (
         <div>
-            <img src={catImg} alt="Cat" />
-            <img
-                src='https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Cat.jpg'
-                alt='Cat'
-            />
             <h1>באיזה אלרגיות תשמח שנטפל?</h1>
             <div className='allergyDiv'>
                 <label className='allergyCheckbox'>
