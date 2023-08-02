@@ -224,7 +224,6 @@ export default function Treatment() {
 
   const handleButtonClick = (audio, buttonIndex) => {
     setAntiAllergen(audio);
-    setSelectedButton(buttonIndex);
   };
 
   return (
