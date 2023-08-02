@@ -54,13 +54,14 @@ const GuidingToPysicalEncounter46 = new URL(`${soundUrl}GuidingToPysicalEncounte
 const GuidingToPysicalEncounter47 = new URL(`${soundUrl}GuidingToPysicalEncounter47.mp3`);
 const GuidingToPysicalEncounter48 = new URL(`${soundUrl}GuidingToPysicalEncounter48.mp3`);
 const GuidingToPysicalEncounter49 = new URL(`${soundUrl}GuidingToPysicalEncounter49.mp3`);
-const Cat = { soundUrl } + 'Allergy/Cat.mp3';
-const Dog = { soundUrl } + 'Allergy/Dog.mp3';
-const Grass = { soundUrl } + 'Allergy/Grass.mp3';
-const DustMites = { soundUrl } + 'Allergy/Dust Bunny.mp3';
-const PineBloom = { soundUrl } + 'Allergy/Pine Bloom.mp3';
-const HayFever = { soundUrl } + 'Allergy/Hay Feber.mp3';
-const Latex = { soundUrl } + 'Allergy/Latex.mp3';
+const Cat = new URL(`${soundUrl}Allergy/Cat.mp3`);
+const Dog = new URL(`${soundUrl}Allergy/Dog.mp3`);
+const Grass = new URL(`${soundUrl}Allergy/Grass.mp3`);
+const DustMites = new URL(`${soundUrl}Allergy/Dust Bunny.mp3`);
+const PineBloom = new URL(`${soundUrl}Allergy/Pine Bloom.mp3`);
+const HayFever = new URL(`${soundUrl}Allergy/Hay Feber.mp3`);
+const Latex = new URL(`${soundUrl}Allergy/Latex.mp3`);
+
 
 export default function Treatment() {
   const location = useLocation();

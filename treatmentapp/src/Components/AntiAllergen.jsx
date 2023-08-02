@@ -1,60 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import AloeVeraIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Aloe Vera.jpg';
-import AloeVeraSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Aloe Vera.mp3';
-
-import AvocadoTreeBlossomIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Avocado Tree Blossom.jpg';
-import AvocadoTreeBlossomSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Avocado Tree Blossom.mp3';
-
-import BlackPepperIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Black Pepper.jpg';
-import BlackPepperSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Black Pepper.mp3';
-
-import BunnyIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Bunny.jpg';
-import BunnySound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Bunny.mp3';
-
-import CarpetIMG from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti Allergens/Carpet.jpg';
-import CarpetSound from 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/Carpet.mp3';
+const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti+Allergens/';
+const soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/';
 
 const antiAllergen = [
-  { name: 'אלוורה', image: AloeVeraIMG, audio: AloeVeraSound },
-  { name: 'פריחת עץ האבוקדו', image: AvocadoTreeBlossomIMG, audio: AvocadoTreeBlossomSound },
-  { name: 'פלפל שחור', image: BlackPepperIMG, audio: BlackPepperSound },
-  { name: 'ארנב', image: BunnyIMG, audio: BunnySound },
-  { name: 'שטיח', image: CarpetIMG, audio: CarpetSound }
+  { name: 'אלוורה', imageName: 'Aloe Vera', audioName: 'Aloe Vera' },
+  { name: 'פריחת עץ האבוקדו', imageName: 'Avocado Tree Blossom', audioName: 'Avocado Tree Blossom' },
+  { name: 'פלפל שחור', imageName: 'Black Pepper', audioName: 'Black Pepper' },
+  { name: 'ארנב', imageName: 'Bunny', audioName: 'Bunny' },
+  { name: 'שטיח', imageName: 'Carpet', audioName: 'Carpet' },
 ];
 
-
 export default function AntiAllergen(props) {
-  const [showAntiAllergen, setShowAntiAllergen] = useState(false);
+  const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
 
-  const handleAntiAllergenSelect = (audio) => {
-    props.setAntiAllergen(audio);
-    setShowAntiAllergen(false);
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setSelectedAntiAllergen(value);
+      props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
+    } 
   };
 
+  // Function to render antiAllergens from antiAllergen
+  const renderAntiAllergen = antiAllergen.map((element) => (
+    <label className='antiAllergenCheckbox' key={element.name}>
+      <img style={{ backgroundImage: `url(${imageUrl}${element.imageName.replace(' ', '%20')}.jpg)` }} alt={element.name} />
+      <span className="checkbox-image">
+        <input
+          type="radio"
+          value={element.audioName}
+          checked={selectedAntiAllergen === element.audioName}
+          onChange={handleCheckboxChange}
+        />
+      </span>
+      {element.name}
+    </label>
+  ));
 
   return (
     <div>
-      {showAntiAllergen && (
-        <div>
-          <h1>בבקשה בחר באנטי-אלרגן</h1>
-          <div className='Anti-Allergens-Div'>
-            {antiAllergen.map((element, index) => (
-              <label className='symptomsCheckbox'>
-                <img src={element.image} alt="Checkbox Image" />
-                <span className="checkbox-image">
-                  <input
-                    type="checkbox"
-                    name='Anti-Allergen'
-                    onClick={() => handleAntiAllergenSelect(element.audio)}
-                  />
-                </span>
-                {element.name}
-              </label>
-            ))}
-          </div>
-        </div>
-      )}
+      <h1>בבקשה בחר באנטי-אלרגן</h1>
+      <div className='Anti-Allergens-Div'>
+        {renderAntiAllergen}
+      </div>
     </div>
-  )
+  );
 }
