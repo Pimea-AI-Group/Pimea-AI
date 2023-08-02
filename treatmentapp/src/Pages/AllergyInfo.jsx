@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Symptoms from '../Components/Symptoms';
 import SelectAllergy from '../Components/SelectAllergy';
 
@@ -36,27 +36,27 @@ export default function AllergyInfo() {
 
 
     fetch('/AddAllergyInfo', {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        method: 'post',
-        body: JSON.stringify({
-            email: user.email,
-            allergy: selectedAllergy,
-            formData
-        })
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      method: 'post',
+      body: JSON.stringify({
+        email: user.email,
+        allergy: selectedAllergy,
+        formData
+      })
     })
-        .then((res) => {
-            return res.json()
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+      .then((res) => {
+        return res.json()
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     nav('/treatment', { state: { allergy: selectedAllergy } });
     console.log(formData);
-    };
+  };
 
-    const show = () =>{
-      return <Symptoms setSymptoms={setSymptoms} />
-    }
+  const show = () => {
+    return <Symptoms setSymptoms={setSymptoms} />
+  }
 
 
   return (
@@ -105,7 +105,6 @@ export default function AllergyInfo() {
               />
             </label>
             <br />
-            {/* <Symptoms setSymptoms={setSymptoms} /> */}
             {show()}
             <label>
               האם אתה נוטל תרופות לטיפול באלרגיה?
