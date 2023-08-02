@@ -11,7 +11,7 @@ export default function CalandlyLink() {
   return (
     <div>
       <h1>בחר מועד בוא יהיה לך נוח שניצור איתך קשר</h1>
-      <iframe src={calandlyLink} width="100%" height="1000" frameBorder="0"></iframe>
+      <iframe src={calandlyLink} width="100%" height="1000" />
     </div>
   );
 }

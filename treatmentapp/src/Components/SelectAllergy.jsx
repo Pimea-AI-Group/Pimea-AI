@@ -38,6 +38,8 @@ export default function SelectAllergy(props) {
                             {matchingAllergy.screenName}
                         </button>
                     );
+                } else {
+                    return null;
                 }
             })}
         </div>

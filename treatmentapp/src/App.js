@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LogIn from './Pages/LogIn';
 import Treatment from './Pages/Treatment';
-import React, { useState } from 'react';
+import React from 'react';
 import LandingPage from './Pages/LandingPage';
 import Allergies from './Pages/Allergies';
 import CalandlyLink from './Components/CalendlyLink';

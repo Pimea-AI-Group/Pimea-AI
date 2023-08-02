@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Relaxed from '../Components/Relaxed';
 import AntiAllergen from '../Components/AntiAllergen';
@@ -67,7 +67,6 @@ export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
-  const [selectedButton, setSelectedButton] = useState(null);
 
   const allergies = [
     { name: 'Cat', audio: Cat },
@@ -114,7 +113,6 @@ export default function Treatment() {
   const [batch, setBatch] = useState(0);
   const [isBatchCompleted, setIsBatchCompleted] = useState(false);
   const [isRelaxSound, setIsRelaxSound] = useState(false);
-  const [displayRelaxed, setDisplayRelaxed] = useState(false);
   const [listening, setListening] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const recognition = useRef(null);
