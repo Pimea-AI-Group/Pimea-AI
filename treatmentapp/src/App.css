@@ -4,6 +4,7 @@ body {
   justify-content: center;
   background-color: #008CBA;
   background-size: cover;
+  background-image: url(https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Background.jpg);
 }
 
 #appDiv {

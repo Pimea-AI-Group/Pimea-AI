@@ -25,8 +25,8 @@ function App() {
   }, []);
 
   return (
-    <div id='appDiv' style={{backgroundImage: `url(${BackgroundImg})`}}>
-      <audio src={BackgroundAudio} ref={audioRef} controls autoPlay loop hidden />
+    <div id='appDiv'>
+      <audio src={BackgroundAudio} ref={audioRef} controls autoPlay loop />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
@@ -36,7 +36,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/allergyinfo" element={<AllergyInfo />} />
           <Route path="/treatment" element={<Treatment />} />
-          
+
           <Route path='/admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
