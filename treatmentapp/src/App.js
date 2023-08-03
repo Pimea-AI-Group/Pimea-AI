@@ -18,7 +18,7 @@ const BackgroundAudio =  { audioUrl } + 'Background+Music.mp3';
 function App() {
   return (
     <div id='appDiv' style={{backgroundImage: BackgroundImg}}>
-      <audio src={BackgroundAudio} controls />
+      <audio url={BackgroundAudio} controls />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
