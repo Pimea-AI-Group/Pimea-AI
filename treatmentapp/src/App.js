@@ -13,12 +13,12 @@ const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/I
 const BackgroundImg = { imagesUrl } + 'Background.jpg';
 
 const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/'
-const BackgroundAudio =  { audioUrl } + 'Background+Music.mp3';
+const BackgroundAudio = new URL(`${{ audioUrl } + 'Background+Music.mp3'}`);
 
 function App() {
   return (
-    <div id='appDiv' style={{backgroundImage: BackgroundImg}}>
-      <audio url={BackgroundAudio} controls />
+    <div id='appDiv' style={{backgroundImage: url(`${BackgroundImg}`)}}>
+      <audio url = {BackgroundAudio} controls />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
