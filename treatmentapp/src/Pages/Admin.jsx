@@ -22,6 +22,7 @@ export default function Admin() {
       .then((response) => response.json())
       .then((data) => {
         setUserData(data)
+        console.log(data)
       })
       .catch((err) => {
         console.log(err);

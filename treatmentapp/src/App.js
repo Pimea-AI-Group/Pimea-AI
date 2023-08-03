@@ -2,23 +2,31 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LogIn from './Pages/LogIn';
 import Treatment from './Pages/Treatment';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import LandingPage from './Pages/LandingPage';
 import Allergies from './Pages/Allergies';
 import CalandlyLink from './Components/CalendlyLink';
 import AllergyInfo from './Pages/AllergyInfo';
 import Admin from './Pages/Admin';
 
-const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/'
-const BackgroundImg = { imagesUrl } + 'Background.jpg';
+// Constant containing the base image URL
+const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/';
+const BackgroundImg = imagesUrl + 'Background.jpg'; 
 
-const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/'
-const BackgroundAudio = new URL(`${{ audioUrl } + 'Background+Music.mp3'}`);
+// Constant containing the base audio URL
+const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
+const BackgroundAudio = audioUrl + 'Background+Music.mp3'; 
 
 function App() {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current.play();
+  }, []);
+
   return (
-    <div id='appDiv' style={{backgroundImage: url(`${BackgroundImg}`)}}>
-      <audio url = {BackgroundAudio} controls />
+    <div id='appDiv' style={{backgroundImage: `url(${BackgroundImg})`}}>
+      <audio src={BackgroundAudio} ref={audioRef} controls autoPlay loop hidden />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
@@ -28,7 +36,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/allergyinfo" element={<AllergyInfo />} />
           <Route path="/treatment" element={<Treatment />} />
-
+          
           <Route path='/admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
