@@ -9,10 +9,6 @@ import CalandlyLink from './Components/CalendlyLink';
 import AllergyInfo from './Pages/AllergyInfo';
 import Admin from './Pages/Admin';
 
-// Constant containing the base image URL
-const imagesUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/';
-const BackgroundImg = imagesUrl + 'Background.jpg'; 
-
 // Constant containing the base audio URL
 const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
 const BackgroundAudio = audioUrl + 'Background+Music.mp3'; 

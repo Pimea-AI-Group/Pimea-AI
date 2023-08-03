@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/'
+// URL for the base image
+const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/';
 
+// Array containing all allergies and their screen names
 const allergiesArray = [
     { name: `Cat`, screenName: `חתול` },
     { name: `Dog`, screenName: `כלב` },
@@ -12,7 +14,6 @@ const allergiesArray = [
     { name: `Latex`, screenName: `לאטקס` },
     { name: `Pine Bloom`, screenName: `פריחת עץ האורן` }
 ]
-
 
 export default function Allergies() {
     const nav = useNavigate();
@@ -66,7 +67,8 @@ export default function Allergies() {
     // Function to render allergies from allergiesArray
     const renderAllergies = allergiesArray.map((allergy) => (
         <label className='allergyCheckbox' key={allergy.name}>
-            <img style={{ backgroundImage: `url(${imageUrl}${allergy.name}.jpg)` }} alt={allergy.name} />
+            {/* Changed backgroundImage to src in img tag */}
+            <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
             <span className="checkbox-image">
                 <input
                     type="checkbox"
