@@ -3,6 +3,8 @@ on:
     push:
         branches:
             - main
+        paths:
+            - Backend
 jobs:
     build:
         runs-on: unbuntu-latest
