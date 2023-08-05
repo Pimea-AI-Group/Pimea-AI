@@ -5,6 +5,7 @@ on:
             - main
         paths:
             - Backend
+            - .github/workflows/Backend.yml
 jobs:
     build:
         runs-on: ubuntu-latest
