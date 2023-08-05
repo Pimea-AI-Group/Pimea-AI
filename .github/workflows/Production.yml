@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - treatmentapp
+      - .github/workflows/Production.yml
 jobs:
   build:
         runs-on: ubuntu-latest
