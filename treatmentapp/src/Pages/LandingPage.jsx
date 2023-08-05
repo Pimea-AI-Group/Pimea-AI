@@ -37,7 +37,7 @@ export default function LandingPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch('/addUser', {
+    fetch('http://3.126.91.66:3000/addUser', {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'post',
       body: JSON.stringify({
