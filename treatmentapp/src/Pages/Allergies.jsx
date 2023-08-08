@@ -73,7 +73,7 @@ export default function Allergies() {
                 <input
                     type="checkbox"
                     value={allergy.screenName}
-                    onChange={handleCheckboxChange(allergy.screenName)}
+                    onChange={handleCheckboxChange}
                 />
             </span>
             {allergy.screenName}
