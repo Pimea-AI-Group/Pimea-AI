@@ -12,7 +12,7 @@ export default function LogIn() {
     })
       .then((response) => response.json())
       .then((data) => {
-        nav('/allergyinfo', { state: { user: data.user } }); 
+        nav('/allergyinfo', { state: { user: data } }); 
       })
       .catch((err) => {
         console.log(err);
