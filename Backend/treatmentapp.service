@@ -1,0 +1,25 @@
+[Unit]
+Description=Treatmentapp Backend node server
+# Documentation=https://
+# Author: Arik Amir
+[Service]
+ExecStart=/opt/bitnami/node/bin/node /home/bitnami/workspace/Pimea-AI/Backend/Server.js
+
+RestartSec=10
+Restart=always
+# Restart=on-failure
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodejs-treatmentapp-server
+# #### please, not root users
+# RHEL/Fedora uses 'nobody'
+# User=nouser
+# Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+# Group=nogroup
+# variables
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=NODE_PORT=3000
+[Install]
+WantedBy=multi-user.target
