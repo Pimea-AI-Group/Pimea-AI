@@ -6,7 +6,7 @@ export default function LogIn() {
   const logIn = () => {
     const password = document.getElementById('password').value;
   
-    fetch(`/GetUserData?password=${password}`, {
+    fetch(`http://3.126.91.66:3000/GetUserData?password=${password}`, {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'get',
     })
