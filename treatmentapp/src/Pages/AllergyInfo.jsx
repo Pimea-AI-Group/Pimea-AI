@@ -35,7 +35,7 @@ export default function AllergyInfo() {
     formData.selectedSymptoms = symptoms;
 
 
-    fetch('/AddAllergyInfo', {
+    fetch('http://3.126.91.66:3000/AddAllergyInfo', {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'post',
       body: JSON.stringify({
