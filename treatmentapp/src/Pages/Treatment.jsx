@@ -5,8 +5,8 @@ import AntiAllergen from '../Components/AntiAllergen';
 const soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/'
 
 // Initializing URLs for various sound files
-const introPart1 = {soundUrl} + `IntroPart1(Male).mp3`;
-const introPart2 = {soundUrl} + `IntroPart2(Male).mp3`;
+const introPart1 = `${soundUrl}IntroPart1(Male).mp3`;
+const introPart2 = `${soundUrl}IntroPart2(Male).mp3`;
 const introPart3 = `${soundUrl}IntroPart3(Male).mp3`;
 const introPart4 = `${soundUrl}IntroPart4(Male).mp3`;
 const introPart5 = `${soundUrl}IntroPart5(Male).mp3`;
