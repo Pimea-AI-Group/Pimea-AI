@@ -15,7 +15,7 @@ export default function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/GetUserDataByEmail?email=${email}`, {
+    fetch(`http://3.126.91.66:3000/GetUserDataByEmail?email=${email}`, {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'get',
     })
