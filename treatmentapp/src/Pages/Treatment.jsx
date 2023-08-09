@@ -82,7 +82,8 @@ export default function Treatment() {
   const setAudio = (allergyName) => {
     let matchingAllergy;
 
-    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)
+    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)  
+    console.log(matchingAllergy);
 
     return matchingAllergy.audio;
   };
