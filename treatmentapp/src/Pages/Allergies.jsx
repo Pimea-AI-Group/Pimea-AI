@@ -72,7 +72,7 @@ export default function Allergies() {
             <span className="checkbox-image">
                 <input
                     type="checkbox"
-                    value={allergy.screenName}
+                    value={allergy.value}
                     onChange={handleCheckboxChange}
                 />
             </span>
