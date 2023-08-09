@@ -33,7 +33,7 @@ export default function SelectAllergy(props) {
                             className='allergyButton'
                             key={allergy.name}
                             style={{ backgroundImage: `url(${imageUrl}${allergy.name}.jpg)` }}
-                            onClick={() => handleAllergyClick(allergy.name)}
+                            onClick={() => handleAllergyClick(allergy.screenName)}
                         >
                             {matchingAllergy.screenName}
                         </button>
