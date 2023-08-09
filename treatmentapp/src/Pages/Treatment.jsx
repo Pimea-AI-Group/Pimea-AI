@@ -70,19 +70,19 @@ export default function Treatment() {
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   const allergies = [
-    { name: 'Cat', audio: Cat },
-    { name: 'Dog', audio: Dog },
-    { name: 'Grass', audio: Grass },
-    { name: 'Dust Bunny', audio: DustMites },
-    { name: 'Pine Bloom', audio: PineBloom },
-    { name: 'Hay Fever', audio: HayFever },
-    { name: 'Latex', audio: Latex }
+    { name: 'Cat', audio: Cat, screenName: 'חתול'},
+    { name: 'Dog', audio: Dog, screenName: 'כלב' },
+    { name: 'Grass', audio: Grass, screenName: 'דשא' },
+    { name: 'Dust Bunny', audio: DustMites, screenName: 'קרדית האבק' },
+    { name: 'Pine Bloom', audio: PineBloom, screenName: 'פריחת עץ האורן' },
+    { name: 'Hay Fever', audio: HayFever, screenName: 'קדחת השחת' },
+    { name: 'Latex', audio: Latex, screenName: 'לאטקס' }
   ];
 
   const setAudio = (allergyName) => {
     let matchingAllergy;
 
-    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)  
+    matchingAllergy = allergies.find((a) => `${a.screenName}` === `${allergyName}`)  
     console.log(matchingAllergy);
 
     return matchingAllergy.audio;
