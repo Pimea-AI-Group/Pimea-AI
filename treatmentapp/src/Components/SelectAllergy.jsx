@@ -18,7 +18,8 @@ export default function SelectAllergy(props) {
     const selectedAllergyArray = location.state.user.allergies;
 
     const handleAllergyClick = (allergyName) => {
-        props.setSelectedAllergy(`${allergyName}`);
+        console.log(allergyName);
+        props.setSelectedAllergy(`${allergyName.name}`);
         props.setFlag(false);
     };
 
@@ -33,7 +34,7 @@ export default function SelectAllergy(props) {
                             className='allergyButton'
                             key={allergy.name}
                             style={{ backgroundImage: `${imageUrl}${allergy.name}.jpg` }}
-                            onClick={() => handleAllergyClick(allergy.name)}
+                            onClick={() => handleAllergyClick(allergy)}
                         >
                             {matchingAllergy.screenName}
                         </button>
