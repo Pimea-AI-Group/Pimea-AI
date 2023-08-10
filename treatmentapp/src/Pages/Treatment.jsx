@@ -67,6 +67,7 @@ const Latex = `${soundUrl}Allergy/Latex.mp3`;
 export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
+  console.log(allergy);
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   const allergies = [

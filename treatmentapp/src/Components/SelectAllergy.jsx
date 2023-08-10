@@ -18,8 +18,6 @@ export default function SelectAllergy(props) {
     const selectedAllergyArray = location.state.user.allergies;
 
     const handleAllergyClick = (allergyName) => {
-        console.log(allergyName);
-        console.log(allergyName.name);
         props.setSelectedAllergy(`${allergyName.name}`);
         props.setFlag(false);
     };
