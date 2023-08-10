@@ -27,7 +27,7 @@ export default function SelectAllergy(props) {
         <div>
             <h1>באיזה מהאלרגיות שלך תרצה שנטפל היום?</h1>
             {selectedAllergyArray.map((allergy) => {
-                const matchingAllergy = allergiesArray.find((a) => `${a.screenName}` === `${allergy.name}`);
+                const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
                 if (matchingAllergy) {
                     return (
                         <button
