@@ -32,7 +32,7 @@ export default function SelectAllergy(props) {
                         <button
                             className='allergyButton'
                             key={allergy.name}
-                            style={{ backgroundImage: `${imageUrl}${allergy.name}.jpg` }}
+                            style={{ backgroundImage: src(`${imageUrl}${allergy.name}.jpg`) }}
                             onClick={() => handleAllergyClick(allergy)}
                         >
                             {matchingAllergy.screenName}
