@@ -27,12 +27,12 @@ export default function SelectAllergy(props) {
             <h1>באיזה מהאלרגיות שלך תרצה שנטפל היום?</h1>
             {selectedAllergyArray.map((allergy) => {
                 const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
+                <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
                 if (matchingAllergy) {
                     return (
                         <button
                             className='allergyButton'
                             key={allergy.name}
-                            style={{backgroundImage: `${imageUrl}${allergy.name}.jpg`}}
                             // style={{ backgroundImage: src(`${imageUrl}${allergy.name}.jpg`) }}
                             onClick={() => handleAllergyClick(allergy)}
                         >
