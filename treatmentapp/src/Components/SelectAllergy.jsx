@@ -19,6 +19,7 @@ export default function SelectAllergy(props) {
 
     const handleAllergyClick = (allergyName) => {
         console.log(allergyName);
+        console.log(allergyName.name);
         props.setSelectedAllergy(`${allergyName.name}`);
         props.setFlag(false);
     };
