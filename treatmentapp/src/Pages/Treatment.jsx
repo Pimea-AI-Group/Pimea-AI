@@ -102,14 +102,14 @@ export default function Treatment() {
     [FinishingMemory1_23],
     [MemoryOfAllergyResponse2_24],
     [ConnectionToAntiAllergenAndProtection2_25, antiAllergen, ConnectionToAntiAllergenAndProtection2_26, antiAllergen],
-    [FinishingMemory2_27, FinishingMemory2_28],
+    [FinishingMemory2_27, allergySound, FinishingMemory2_28, antiAllergen],
     [MemoryOfAllergyResponse3_29],
     [ConnectionToAntiAllergenAndProtection3_30],
-    [FinishingMemory3_31, FinishingMemory3_32, FinishingMemory3_33, FinishingMemory3_34, FinishingMemory3_35, FinishingMemory3_36, FinishingMemory3_37],
-    [FutureSituation38, FutureSituation39, FutureSituation40],
-    [ConnectionToAntiAllergen41, ConnectionToAntiAllergen42, ConnectionToAntiAllergen43, ConnectionToAntiAllergen44],
-    [FinishingMemory4_45],
-    [GuidingToPysicalEncounter46, GuidingToPysicalEncounter47, GuidingToPysicalEncounter48, GuidingToPysicalEncounter49]
+    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, FinishingMemory3_36, antiAllergen, FinishingMemory3_37],
+    [FutureSituation38, allergySound, FutureSituation39, allergySound, FutureSituation40],
+    [ConnectionToAntiAllergen41, allergySound, ConnectionToAntiAllergen42, antiAllergen, ConnectionToAntiAllergen43, allergySound, ConnectionToAntiAllergen44, antiAllergen],
+    [FinishingMemory4_45, allergySound],
+    [GuidingToPysicalEncounter46, allergySound, GuidingToPysicalEncounter47, allergySound, GuidingToPysicalEncounter48, antiAllergen, GuidingToPysicalEncounter49]
   ];
 
   const [index, setIndex] = useState(0);

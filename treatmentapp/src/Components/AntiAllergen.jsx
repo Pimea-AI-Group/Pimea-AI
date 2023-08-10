@@ -25,7 +25,7 @@ export default function AntiAllergen(props) {
   // Function to render antiAllergens from antiAllergen
   const renderAntiAllergen = antiAllergen.map((element) => (
     <label className='antiAllergenCheckbox' key={element.name}>
-      <img style={{ backgroundImage: `url(${imageUrl}${element.imageName.replace(' ', '%20')}.jpg)` }} alt={element.name} />
+      <img style={{ backgroundImage: `${imageUrl}${element.imageName.replace(' ', '+')}.jpg)` }} alt={element.name} />
       <span className="checkbox-image">
         <input
           type="radio"
