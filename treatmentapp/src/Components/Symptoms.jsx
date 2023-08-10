@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/Symptoms/'
+const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Symptoms/'
 
 const symptomsArray = [
     { name: `Breath`, screenName: `קושי בנשימה` },
