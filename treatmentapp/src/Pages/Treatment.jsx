@@ -241,9 +241,9 @@ export default function Treatment() {
 
       {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
 
-      {batch >= 2 && batch <= 3 && !isBatchCompleted && (
+      {/* {batch >= 2 && batch <= 3 && !isBatchCompleted && (
         <AntiAllergen setAntiAllergen={setAntiAllergen} />
-      )}
+      )} */}
 
     </div>
   );
