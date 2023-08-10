@@ -51,7 +51,6 @@ export default function AllergyInfo() {
         console.log(err);
       })
     nav('/treatment', { state: { allergy: selectedAllergy } });
-    console.log(formData);
   };
 
   const show = () => {
@@ -65,7 +64,7 @@ export default function AllergyInfo() {
         <SelectAllergy setSelectedAllergy={setSelectedAllergy} setFlag={setFlag} />
       ) : (
         <>
-          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך ל${user.name}`}</h1>
+          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך ל${selectedAllergy}`}</h1>
           <form onSubmit={handleSubmit}>
             <label>
               האם האלרגיה אובחנה בעבר?
