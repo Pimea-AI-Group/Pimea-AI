@@ -5,7 +5,7 @@ export default function LogIn() {
 
   const logIn = () => {
     const password = document.getElementById('password').value;
-  
+
     fetch(`http://3.126.91.66:3000/GetUserData?password=${password}`, {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'get',
@@ -13,36 +13,20 @@ export default function LogIn() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data.user);
-        nav('/allergyinfo', { state: { user: data.user } }); 
+        nav('/allergyinfo', { state: { user: data.user } });
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  
+
   return (
     <div>
       <h1>ברוכים הבאים</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        5
-
-        PARAGRAPHS
-
-        COPY
-        DISCOVER MORE!
-        Check out our new font generator and level up your social bios. Need more? Head over to Glyphy for all the fancy fonts and cool symbols you could ever imagine.
-
-        And don’t forget, we have images, plugins and the ultimate guide to all flavors of lorem ipsum.
-
-
-        What is Lorem Ipsum?
-        From its medieval origins to the digital era, learn everything there is to know about the ubiquitous lorem ipsum passage.
-
-        Lorem ipsum used in a magazine layout
-        MAGAZINE LAYOUT WITH LOREM IPSUM
-        HISTORY, PURPOSE AND USAGE
-        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
-      </p>
+      <p>מיד נתחיל בתהליך של דמיון מודרך שייעודו להשפיע על התגובה האלרגית שאת/ה חווה. בתהליך זה נשנה יחד את ההתניות של הפנימיות של התודעה ושל מערכת החיסון שלך במטרה להקל או להעלים את התגובה האלרגית תוך זמן קצר, ולשפר את איכות חייך.
+        במהלך התהליך תונחה באמצעות קבצי קול שיפעלו ברצף. בנקודות מסוימות בתהליך תתבקש לתת חיווי למערכת על מנת להמשיך בתהליך. החיווי יכול להתבצע קולית ע"י אמירת YES/ NO או ע"י לחיצה על כפתורי YES/ NO שיופיעו על המסך.
+        במהלך התהליך תתבקש להתחבר לתחושת גוף וזיכרונות שונים.
+        התהליך אורך כ- -30-40 דקות ורצוי לעבור אותו בסביבה המאפשרת נוחות ושקט. מומלץ להאזין לתהליך עם אוזניות, אך אין זה הכרחי.</p>
       <input id="password" type="text" placeholder="הכנס סיסמא זמנית" /><br />
       <button onClick={() => logIn()}>היכנס</button>
     </div>
