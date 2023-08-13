@@ -4,12 +4,16 @@ body {
   background-image: url(https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Background.jpg);
   margin: 0;
   padding: 0;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 400px;
   margin: 50px auto;
-  background: #fff;
+  background: none;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
