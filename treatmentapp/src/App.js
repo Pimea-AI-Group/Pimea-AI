@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div id='appDiv'>
+    <div className='container'>
       <audio src={BackgroundAudio} ref={audioRef} controls autoPlay loop />
       <BrowserRouter>
         <Routes>
