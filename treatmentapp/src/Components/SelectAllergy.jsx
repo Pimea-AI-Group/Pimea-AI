@@ -8,7 +8,7 @@ const allergiesArray = [
     { name: `Dog`, screenName: `כלב` },
     { name: `Dust Bunny`, screenName: `קרדית האבק` },
     { name: `Grass`, screenName: `דשא` },
-    { name: `Hay Fever`, screenName: `שפעת השחת` },
+    { name: `Hay Fever`, screenName: `קדחת השחת` },
     { name: `Latex`, screenName: `לאטקס` },
     { name: `Pine Bloom`, screenName: `פריחת עץ האורן` }
 ]
@@ -24,7 +24,7 @@ export default function SelectAllergy(props) {
 
     return (
         <div>
-            <h1>באיזה מהאלרגיות שלך תרצה שנטפל היום?</h1>
+            <h1>באילו מהאלרגיות שלך תרצה שנטפל היום?</h1>
             {selectedAllergyArray.map((allergy) => {
                 const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
                 <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
@@ -33,7 +33,6 @@ export default function SelectAllergy(props) {
                         <button
                             className='allergyButton'
                             key={allergy.name}
-                            // style={{ backgroundImage: src(`${imageUrl}${allergy.name}.jpg`) }}
                             onClick={() => handleAllergyClick(allergy)}
                         >
                             {matchingAllergy.screenName}

@@ -10,7 +10,7 @@ const allergiesArray = [
     { name: `Dog`, screenName: `כלב` },
     { name: `Dust Bunny`, screenName: `קרדית האבק` },
     { name: `Grass`, screenName: `דשא` },
-    { name: `Hay Fever`, screenName: `שפעת השחת` },
+    { name: `Hay Fever`, screenName: `קדחת השחת` },
     { name: `Latex`, screenName: `לאטקס` },
     { name: `Pine Bloom`, screenName: `פריחת עץ האורן` }
 ]

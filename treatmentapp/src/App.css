@@ -1,4 +1,205 @@
+/* Universal styling */
 body {
+  font-family: Arial, sans-serif;
+  background-image: url(https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Background.jpg);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #444;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Allergies page styling */
+.allergyDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;  /* for spacing between items */
+}
+
+.allergyCheckbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 23%; /* 4 items per row */
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.allergyCheckbox:hover {
+  background-color: #f9f9f9;
+}
+
+.allergyCheckbox img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* circular images */
+  margin-bottom: 10px;
+}
+
+.checkbox-image {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .checkbox-image {
+  display: block;
+  background: url('checkmark-icon.png') no-repeat center;
+  width: 20px;
+  height: 20px;
+}
+
+/* CalandlyLink page styling */
+iframe {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Add padding to all elements inside the container */
+.container > * {
+  margin-bottom: 20px;
+}
+
+
+/* Admin panel container styling */
+.admin-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin header styling */
+.admin-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Admin form styling */
+.admin-form {
+  margin-bottom: 20px;
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.admin-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-form button:hover {
+  background-color: #0056b3;
+}
+
+/* User data styling */
+.user-data {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-data h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.user-data p {
+  margin-bottom: 10px;
+}
+
+.user-data strong {
+  font-weight: bold;
+}
+
+/* Highlighted password styling */
+.user-data strong[style*="backgroundColor: yellow"] {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: yellow;
+  color: black;
+}
+
+/* Allergy data styling */
+.user-data div {
+  padding: 10px;
+  border: 1px dashed #ddd;
+  margin-bottom: 10px;
+}
+
+.user-data div:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* body {
   direction: rtl;
   display: flex;
   justify-content: center;
@@ -118,8 +319,6 @@ button:hover {
   background-size: contain;
 }
 
-/* Admin.css */
-
 .admin-container {
   max-width: 600px;
   margin: 0 auto;
@@ -157,4 +356,4 @@ button:hover {
 
 .user-data p {
   margin-bottom: 5px;
-}
+} */
