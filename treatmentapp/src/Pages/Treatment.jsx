@@ -105,7 +105,7 @@ export default function Treatment() {
     [FinishingMemory2_27, allergySound, FinishingMemory2_28, antiAllergen],
     [MemoryOfAllergyResponse3_29],
     [ConnectionToAntiAllergenAndProtection3_30],
-    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, FinishingMemory3_36, antiAllergen, FinishingMemory3_37],
+    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, allergySound, FinishingMemory3_36, antiAllergen, FinishingMemory3_37],
     [FutureSituation38, allergySound, FutureSituation39, allergySound, FutureSituation40],
     [ConnectionToAntiAllergen41, allergySound, ConnectionToAntiAllergen42, antiAllergen, ConnectionToAntiAllergen43, allergySound, ConnectionToAntiAllergen44, antiAllergen],
     [FinishingMemory4_45, allergySound],
