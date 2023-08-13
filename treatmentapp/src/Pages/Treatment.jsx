@@ -71,8 +71,8 @@ export default function Treatment() {
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   const allergies = [
-    { name: 'Cat', audio: Cat, screenName: 'חתול'},
-    { name: 'Dog', audio: Dog, screenName: 'כלב' },
+    { name: 'Cat', audio: Cat, screenName: 'חתולים'},
+    { name: 'Dog', audio: Dog, screenName: 'כלבים' },
     { name: 'Grass', audio: Grass, screenName: 'דשא' },
     { name: 'Dust Bunny', audio: DustMites, screenName: 'קרדית האבק' },
     { name: 'Pine Bloom', audio: PineBloom, screenName: 'פריחת עץ האורן' },

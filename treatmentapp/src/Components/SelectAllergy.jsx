@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Allergies/'
 
 const allergiesArray = [
-    { name: `Cat`, screenName: `חתול` },
-    { name: `Dog`, screenName: `כלב` },
+    { name: `Cat`, screenName: `חתולים` },
+    { name: `Dog`, screenName: `כלבים` },
     { name: `Dust Bunny`, screenName: `קרדית האבק` },
     { name: `Grass`, screenName: `דשא` },
     { name: `Hay Fever`, screenName: `קדחת השחת` },

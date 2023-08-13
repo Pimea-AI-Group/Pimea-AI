@@ -6,8 +6,8 @@ const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Im
 
 // Array containing all allergies and their screen names
 const allergiesArray = [
-    { name: `Cat`, screenName: `חתול` },
-    { name: `Dog`, screenName: `כלב` },
+    { name: `Cat`, screenName: `חתולים` },
+    { name: `Dog`, screenName: `כלבים` },
     { name: `Dust Bunny`, screenName: `קרדית האבק` },
     { name: `Grass`, screenName: `דשא` },
     { name: `Hay Fever`, screenName: `קדחת השחת` },
@@ -81,7 +81,7 @@ export default function Allergies() {
 
     return (
         <div>
-            <h1>באיזה אלרגיות תשמח שנטפל?</h1>
+            <h1>באילו אלרגיות תשמח שנטפל?</h1>
             <div className='allergyDiv'>
                 {renderAllergies}
                 <button onClick={handleButtonClick}>המשך לקביעת פגישה</button>
