@@ -89,7 +89,6 @@ button:hover {
 
 input[type="checkbox"]:checked + .checkbox-image {
   display: block;
-  background: url('checkmark-icon.png') no-repeat center;
   width: 20px;
   height: 20px;
 }
