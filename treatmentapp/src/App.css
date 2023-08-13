@@ -4,7 +4,6 @@ body {
   background-image: url(https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Background.jpg);
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
 .container {
@@ -178,23 +177,11 @@ iframe {
   font-weight: bold;
 }
 
-/* Highlighted password styling */
-.user-data strong[style*="backgroundColor: yellow"] {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: yellow;
-  color: black;
-}
-
 /* Allergy data styling */
 .user-data div {
   padding: 10px;
   border: 1px dashed #ddd;
   margin-bottom: 10px;
-}
-
-.user-data div:last-child {
-  margin-bottom: 0;
 }
 
 
