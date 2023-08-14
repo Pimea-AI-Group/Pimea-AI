@@ -52,7 +52,7 @@ export default function Symptoms(props) {
     
     return (
         <div>
-            <h1>מהם הסימפטומים לאלרגיה שלך?</h1>
+            <h1>מה הם הסימפטומים לאלרגיה שלך?</h1>
             <div className='symptomsDiv'>
                 {renderSymptoms}
             </div>

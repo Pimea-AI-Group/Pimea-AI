@@ -34,6 +34,10 @@ export default function AllergyInfo() {
     e.preventDefault();
     formData.selectedSymptoms = symptoms;
 
+    if (!isDisclaimerChecked) {
+      alert("Please approve the Disclaimer before proceeding.");
+      return;
+    }
 
     fetch('http://3.126.91.66:3000/AddAllergyInfo', {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -94,7 +98,7 @@ export default function AllergyInfo() {
             )}
             <br />
             <label>
-              כמה זמן אתה סובל מאלרגיה זו? (שנים)
+              כמה שנים קיימת האלרגיה אצליך?
               <input
                 type="number"
                 name="yearsWithAllergy"
@@ -106,7 +110,7 @@ export default function AllergyInfo() {
             <br />
             {show()}
             <label>
-              האם אתה נוטל תרופות לטיפול באלרגיה?
+              האם את/ה נוטל/ת תרופות לטיפול באלרגיה?
               <select
                 name="medicine"
                 value={formData.medicine}
@@ -133,7 +137,7 @@ export default function AllergyInfo() {
             )}
             <br />
             <label>
-              האם יש לך ניסיון בטיפול מהסוג הזה?
+              האם יש לך ניסיון בתהליך שמשלב דימיון מודרך?
               <select
                 name="formerTreatment"
                 value={formData.formerTreatment}
@@ -160,7 +164,7 @@ export default function AllergyInfo() {
             )}
             <br />
             <label>
-              כמה אתה סובל מאלרגיה זו (1-10):
+              כמה אתה סובל מאלרגיה זו (1-10): להוסיף (כאשר 1 מסמל כלל לא, ו 10 מסמל מאוד)
               <input
                 type="number"
                 name="sufferScale"
@@ -172,9 +176,18 @@ export default function AllergyInfo() {
             <br />
             <br />
             <button id='submitBTN' type="submit">המשך</button>
+            <label>
+              <input
+                type="checkbox"
+                checked={isDisclaimerChecked}
+                onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)} 
+              />
+              <span onClick={() => Disclaimer()}>בבקשה אשר את תנאי השירות</span> 
+            </label>
           </form>
-        </>
-      )}
-    </div>
+    </>
+  )
+}
+    </div >
   );
 }
