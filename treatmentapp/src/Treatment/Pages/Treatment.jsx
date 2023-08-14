@@ -89,7 +89,7 @@ export default function Treatment() {
   const allergySound = setAudio(allergy)
   const relaxSounds = [GuidedRelaxation1_10, GuidedRelaxation2_15];
   const soundFiles = [
-    [introPart1, allergySound, introPart2, Ready],
+    [introPart1, allergySound, introPart2],
     [introPart3, allergySound, introPart4, allergySound, introPart5, IdentifyingTheDominantSense6, allergySound, IdentifyingTheDominantSense7, allergySound, IdentifyingTheDominantSense8, allergySound, IdentifyingTheDominantSense9, allergySound, Ready],
     [IdentifyingAntiAllergen11, allergySound, IdentifyingAntiAllergen12, allergySound, IdentifyingAntiAllergen13, allergySound, IdentifyingAntiAllergen14, Ready],
     [ExpandTheAntiAllergenExperience16, antiAllergen, ExpandTheAntiAllergenExperience17, antiAllergen, ExpandTheAntiAllergenExperience18, Ready],
@@ -228,7 +228,7 @@ export default function Treatment() {
 
   return (
     <div>
-      <h1>Treatment Process</h1>
+      <h1>דימיון מודרך</h1>
 
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
         <source src={isRelaxSound ? relaxSounds[Math.floor(Math.random() * relaxSounds.length)] : soundFiles[batch][index]} type="audio/mpeg" />
