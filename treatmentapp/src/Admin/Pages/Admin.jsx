@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import AllergyButton from '../Components/AllergyButton';  // Importing the AllergyButton component
-
+import AllergyButton from '../Components/AllergyButton';
 export default function Admin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +22,6 @@ export default function Admin() {
       .then((response) => response.json())
       .then((data) => {
         setUserData(data);
-        console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -46,16 +44,34 @@ export default function Admin() {
       {userData && (
         <div className="user-data">
           <h2>User Data</h2>
-          {/* ...rest of user details... */}
-          <strong style={{ backgroundColor: 'yellow' }}>סיסמא:</strong> {userData.password}
-
-          {/* Map through the allergies and display them as buttons */}
-          <div>
-            <strong>Allergies:</strong>
-            {userData.allergies.map((allergy, index) => (
-              <AllergyButton key={index} allergy={allergy} />  // Using the AllergyButton component
-            ))}
-          </div>
+          <p>
+            <strong>שם פרטי:</strong> {userData.firstName}
+          </p>
+          <p>
+            <strong>שם משפחה:</strong> {userData.lastName}
+          </p>
+          <p>
+            <strong>אימייל:</strong> {userData.email}
+          </p>
+          <p>
+            <strong>מגדר:</strong> {userData.gender}
+          </p>
+          <p>
+            <strong>תאריך לידה:</strong> {userData.dob}
+          </p>
+          <p>
+            <strong>מספר טלפון:</strong> {userData.phoneNumber}
+          </p>
+          <p>
+            <strong>מקום מגורים:</strong> {userData.city}
+          </p>
+          <p>
+            <strong style={{ backgroundColor: 'yellow' }}>סיסמא:</strong> {userData.password}
+          </p>
+          <strong>אלרגיות:</strong>
+          {userData.allergies.map((allergy, index) => (
+            <AllergyButton key={index} allergy={allergy} />
+          ))}
         </div>
       )}
     </div>

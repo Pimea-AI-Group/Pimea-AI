@@ -6,10 +6,8 @@ export default function AllergyButton({ allergy }) {
 
   return (
     <div>
-      {/* Button to toggle showing of the details */}
       <button onClick={() => setShowDetails(!showDetails)}>{allergy.name}</button>
       
-      {/* Display details if showDetails is true */}
       {showDetails && (
         <div>
           <p><strong>האם אובחנה:</strong> {allergy.allergyDiagnosed}</p>
