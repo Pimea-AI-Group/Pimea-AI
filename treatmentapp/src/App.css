@@ -91,7 +91,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.allergyCheckbox :checked {
+.allergyCheckbox:checked {
   border: 5px solid black;
 }
 
