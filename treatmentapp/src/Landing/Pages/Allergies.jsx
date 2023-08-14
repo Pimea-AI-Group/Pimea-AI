@@ -47,6 +47,11 @@ export default function Allergies() {
     const handleButtonClick = async (e) => {
         e.preventDefault();
 
+        if (selectedAllergies.length =0) {
+            console.log("חובה לבחור אלרגיה");
+            return;
+        }
+
         fetch('http://3.126.91.66:3000/AddAllergies', {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: 'post',
@@ -86,14 +91,6 @@ export default function Allergies() {
                 {renderAllergies}
                 <button onClick={handleButtonClick}>המשך לקביעת פגישה</button>
             </div>
-            <label>
-                האם אחת מהאלרגיה מסכנת חיים?
-            </label>
-            <input
-                type="checkbox"
-                name="allergyLifeThreatening"
-                onClick={() => { alert("לצערינו אינך מתאים להליך טיפול זה"); nav('/') }}
-            />
         </div>
     );
 }

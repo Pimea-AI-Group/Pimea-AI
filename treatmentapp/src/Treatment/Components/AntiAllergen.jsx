@@ -10,7 +10,7 @@ const antiAllergen = [
   { name: 'ארנב', imageName: 'Bunny', audioName: 'Bunny' },
   { name: 'שטיח', imageName: 'Carpet', audioName: 'Carpet' },
   { name: 'חתול', imageName: 'Cat', audioName: 'Cat' },
-  { name: 'פרח יסמין', imageName: 'Cherry Blossom', audioName: 'Cherry Blossom' },
+  { name: 'פריחת הדובדבן', imageName: 'Cherry Blossom', audioName: 'Cherry Blossom' },
   { name: 'קינמון', imageName: 'Cinnamon', audioName: 'Cinnamon' },
   { name: 'פרי הדר', imageName: 'Citrus Fruit', audioName: 'Citrus Fruit' },
   { name: 'כפפות בד', imageName: 'Cloth Gloves', audioName: 'Cloth Gloves' },
