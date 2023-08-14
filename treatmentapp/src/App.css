@@ -9,9 +9,9 @@ body {
   background-size: cover;
 }
 
-audio {
+/* audio {
   visibility: hidden;
-}
+} */
 
 .container {
   max-width: 400px;
@@ -55,7 +55,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-.allergy-div, .symptoms-div, .anti-allergens-div {
+.allergy-div, .symptomsDiv, .anti-allergens-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
