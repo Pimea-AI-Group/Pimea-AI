@@ -89,7 +89,7 @@ export default function AntiAllergen(props, { setAntiAllergen }) {
 
   return (
     <div>
-      {antiAllergens.map((item, index) => (
+      {antiAllergen.map((item, index) => (
         <button key={index} onClick={() => handleButtonClick(item.audioName, index)}>
           <img src={`${imageUrl}${item.imageName}.jpg`} alt={item.name} />
           <span>{item.name}</span>
