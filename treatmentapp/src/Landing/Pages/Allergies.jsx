@@ -90,7 +90,7 @@ export default function Allergies() {
             <h3>בבקשה לסמן רק אלרגיות שאינן מסכנות חיים</h3>
             <div className='allergyDiv'>
                 {renderAllergies}
-                <button onClick={handleButtonClick}>המשך לקביעת פגישה</button>
+                <button style={{fontSize: `xxx-large`}} onClick={handleButtonClick}>המשך לקביעת פגישה</button>
             </div>
         </div>
     );
