@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Symptoms from '../../Components/Symptoms';
-import SelectAllergy from '../../Components/SelectAllergy';
+import Symptoms from '../Components/Symptoms';
+import SelectAllergy from '../Components/SelectAllergy';
 
 export default function AllergyInfo() {
   const nav = useNavigate();
