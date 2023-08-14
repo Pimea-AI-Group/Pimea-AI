@@ -37,7 +37,7 @@ export default function Symptoms(props) {
 
     // Function to render symptoms from symptomsArray
     const renderSymptoms = symptomsArray.map((symptom) => (
-        <label className='allergyCheckbox' key={symptom.name}>
+        <label className={`symptomCheckbox ${checkedItems.includes(symptom.screenName) ? 'selectedSymptom' : ''}`} key={symptom.name}>
             <img src={`${imageUrl}${symptom.name}.jpg`} alt={symptom.name} />
             <span className="checkbox-image">
                 <input
@@ -49,6 +49,7 @@ export default function Symptoms(props) {
             {symptom.screenName}
         </label>
     ));
+    
     return (
         <div>
             <h1>מהם הסימפטומים לאלרגיה שלך?</h1>

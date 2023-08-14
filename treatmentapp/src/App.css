@@ -94,8 +94,9 @@ button:hover {
 }
 
 .symptomsDiv {
-  display: grid;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .checkbox-image {
@@ -115,20 +116,23 @@ iframe {
   overflow: hidden;
 }
 
-
-/* Admin panel container styling */
-.admin-container {
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.symptomCheckbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 23%;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.admin-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.symptomCheckbox:hover {
+  background-color: #f9f9f9;
+}
+
+.selectedSymptom {
+  background-color: white;
 }
 
 
