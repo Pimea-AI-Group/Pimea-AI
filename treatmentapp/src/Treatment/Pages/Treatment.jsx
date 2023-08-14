@@ -251,7 +251,12 @@ export default function Treatment() {
       </audio>
       {showAntiAllergen && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
       {isBatchCompleted && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-      {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />} {/* You might want to manage this flag with the new logic too */}
+      {flag && <AntiAllergen
+        setShowAntiAllergen={setShowAntiAllergen}
+        setIndex={setIndex}
+        index={index}
+        setIsPlaying={setIsPlaying}
+      />}
     </div>
   );
 }

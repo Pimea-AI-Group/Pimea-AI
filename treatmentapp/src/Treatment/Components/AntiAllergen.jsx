@@ -53,9 +53,10 @@ const antiAllergen = [
   { name: 'כפפות צמר', imageName: 'Wool Gloves', audioName: 'Wool Gloves' },
 ];
 
-export default function AntiAllergen(props, { setAntiAllergen }) {
+export default function AntiAllergen(props, { setShowAntiAllergen, setIndex, index, setIsPlaying }) {
   const navigate = useNavigate();
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
+  
 
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
