@@ -100,6 +100,7 @@ div > div {
 }
 
 .antiAllergenCheckbox img,
+.allergyCheckbox img,
 .symptomCheckbox img {
   width: 100px;
   height: 100px;
