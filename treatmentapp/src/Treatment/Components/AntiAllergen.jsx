@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const imageUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Anti+Allergens/';
 const soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Anti-Allergen/';
@@ -52,7 +53,8 @@ const antiAllergen = [
   { name: 'כפפות צמר', imageName: 'Wool Gloves', audioName: 'Wool Gloves' },
 ];
 
-export default function AntiAllergen(props) {
+export default function AntiAllergen(props, { setAntiAllergen }) {
+  let nav = useNavigate();
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
 
   const handleCheckboxChange = (event) => {
@@ -61,6 +63,11 @@ export default function AntiAllergen(props) {
       setSelectedAntiAllergen(value);
       props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
     }
+  };
+
+  const handleButtonClick = (audio, buttonIndex) => {
+    setAntiAllergen(audio);
+    // Additional logic related to button click can go here
   };
 
   // Function to render antiAllergens from antiAllergen
@@ -82,10 +89,12 @@ export default function AntiAllergen(props) {
 
   return (
     <div>
-      <h1>בבקשה בחר באנטי-אלרגן</h1>
-      <div className='Anti-Allergens-Div'>
-        {renderAntiAllergen}
-      </div>
+      {antiAllergens.map((item, index) => (
+        <button key={index} onClick={() => handleButtonClick(item.audioName, index)}>
+          <img src={`${imageUrl}${item.imageName}.jpg`} alt={item.name} />
+          <span>{item.name}</span>
+        </button>
+      ))}
     </div>
   );
 }

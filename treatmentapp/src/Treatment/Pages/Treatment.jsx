@@ -69,6 +69,7 @@ export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
+  
 
   const allergies = [
     { name: 'Cat', audio: Cat, screenName: 'חתולים' },
@@ -229,15 +230,11 @@ export default function Treatment() {
   return (
     <div>
       <h1>דימיון מודרך</h1>
-
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
-        <source src={isRelaxSound ? relaxSounds[Math.floor(Math.random() * relaxSounds.length)] : soundFiles[batch][index]} type="audio/mpeg" />
+        <source src={isRelaxSound ? getRelaxSound() : getCurrentSound()} type="audio/mpeg" />
       </audio>
-
       {isBatchCompleted && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-
       {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
-
     </div>
   );
 }
