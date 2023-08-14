@@ -1,4 +1,3 @@
-/* Universal styling */
 body {
   font-family: Arial, sans-serif;
   background-image: url(https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Images/Background.jpg);
@@ -10,7 +9,7 @@ body {
   background-size: cover;
 }
 
-audio{
+audio {
   visibility: none;
 }
 
@@ -60,19 +59,18 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Allergies page styling */
 .allergyDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;  /* for spacing between items */
+  gap: 20px;
 }
 
 .allergyCheckbox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 23%; /* 4 items per row */
+  width: 23%;
   padding: 10px;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -87,7 +85,7 @@ button:hover {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 50%; /* circular images */
+  border-radius: 50%;
   margin-bottom: 10px;
 }
 
@@ -95,12 +93,16 @@ button:hover {
   background-color: white;
 }
 
+.symptomsDiv {
+  display: grid;
+  
+}
 
 .checkbox-image {
   display: none;
 }
 
-input[type="checkbox"]:checked + .checkbox-image {
+input[type="checkbox"]:checked+.checkbox-image {
   display: block;
   width: 20px;
   height: 20px;
@@ -111,11 +113,6 @@ iframe {
   border: none;
   border-radius: 8px;
   overflow: hidden;
-}
-
-/* Add padding to all elements inside the container */
-.container > * {
-  margin-bottom: 20px;
 }
 
 
@@ -129,73 +126,10 @@ iframe {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Admin header styling */
 .admin-container h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-
-/* Admin form styling */
-.admin-form {
-  margin-bottom: 20px;
-}
-
-.admin-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.admin-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.admin-form button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.admin-form button:hover {
-  background-color: #0056b3;
-}
-
-/* User data styling */
-.user-data {
-  background-color: #f8f8f8;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.user-data h2 {
-  text-align: center;
-  margin-top: 0;
-}
-
-.user-data p {
-  margin-bottom: 10px;
-}
-
-.user-data strong {
-  font-weight: bold;
-}
-
-/* Allergy data styling */
-.user-data div {
-  padding: 10px;
-  border: 1px dashed #ddd;
-  margin-bottom: 10px;
-}
-
 
 
 /* body {
