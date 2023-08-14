@@ -54,7 +54,7 @@ const antiAllergen = [
 ];
 
 export default function AntiAllergen(props, { setAntiAllergen }) {
-  let nav = useNavigate();
+  const navigate = useNavigate();
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
 
   const handleCheckboxChange = (event) => {
@@ -62,9 +62,11 @@ export default function AntiAllergen(props, { setAntiAllergen }) {
     if (checked) {
       setSelectedAntiAllergen(value);
       props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
+      setShowAntiAllergen(false); // Hide the component
+      setIndex(index + 1); // Continue with the next audio
+      setIsPlaying(true); // Play the next audio
     }
-  };
-
+};
   const handleButtonClick = (audio, buttonIndex) => {
     setAntiAllergen(audio);
     // Additional logic related to button click can go here
@@ -90,7 +92,7 @@ export default function AntiAllergen(props, { setAntiAllergen }) {
   return (
     <div>
       {antiAllergen.map((item, index) => (
-        <button key={index} onClick={() => handleButtonClick(item.audioName, index)}>
+        <button className='antiAllergenCheckbox' key={index} onClick={() => handleButtonClick(item.audioName, index)}>
           <img src={`${imageUrl}${item.imageName}.jpg`} alt={item.name} />
           <span>{item.name}</span>
         </button>

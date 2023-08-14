@@ -12,6 +12,8 @@ export default function AllergyInfo() {
   const [selectedAllergy, setSelectedAllergy] = useState('');
   const [flag, setFlag] = useState(true);
   const [isDisclaimerChecked, setIsDisclaimerChecked] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
 
   const [formData, setFormData] = useState({
     name: selectedAllergy,
@@ -182,14 +184,15 @@ export default function AllergyInfo() {
               <input
                 type="checkbox"
                 checked={isDisclaimerChecked}
-                onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)} 
+                onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)}
               />
-              <span onClick={()=>{<Disclaimer />}}>בבקשה אשר את תנאי השירות</span> 
+              <span onClick={() => setShowDisclaimer(true)}>בבקשה אשר את תנאי השירות</span>
+              {showDisclaimer && <Disclaimer />}
             </label>
           </form>
-    </>
-  )
-}
+        </>
+      )
+      }
     </div >
   );
 }

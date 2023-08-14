@@ -70,6 +70,7 @@ export default function Treatment() {
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
   const [currentSoundIndex, setCurrentSoundIndex] = useState(0);
+  const [showAntiAllergen, setShowAntiAllergen] = useState(false);
 
 
   const allergies = [
@@ -83,9 +84,7 @@ export default function Treatment() {
   ];
 
   const setAudio = (allergyName) => {
-    let matchingAllergy;
-    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)
-    return matchingAllergy.audio;
+    return allergies.find(a => a.name === allergyName).audio;
   };
 
   const allergySound = setAudio(allergy)
@@ -177,6 +176,10 @@ export default function Treatment() {
 
   const handleAudioEnd = () => {
     setIsPlaying(false);
+    if (batch === 2 && index === 2) { // Assuming IdentifyingAntiAllergen13 is at index 2 in batch 2
+      setShowAntiAllergen(true);
+      return; // We return here to prevent further audio from playing
+    }
     if (isRelaxSound) {
       setIsRelaxSound(false);
       setIsBatchCompleted(true);
@@ -233,21 +236,22 @@ export default function Treatment() {
     // For example:
     return soundUrl + relaxSounds[currentSoundIndex];
   };
-  
+
   const getCurrentSound = () => {
     // You can return the current sound based on your logic.
     // For example:
     return soundUrl + soundFiles[currentSoundIndex];
   };
-  
+
   return (
     <div>
       <h1>דימיון מודרך</h1>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
         <source src={isRelaxSound ? getRelaxSound() : getCurrentSound()} type="audio/mpeg" />
       </audio>
+      {showAntiAllergen && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
       {isBatchCompleted && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-      {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
+      {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />} {/* You might want to manage this flag with the new logic too */}
     </div>
   );
 }
