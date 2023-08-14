@@ -55,17 +55,16 @@ button:hover {
   background-color: #0056b3;
 }
 
-.allergy-div, .symptomsDiv, .anti-allergens-div {
+/* .allergy-div, .symptomsDiv, .anti-allergens-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-}
+} */
 
 .antiAllergenCheckbox, .symptomCheckbox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 23%;
   padding: 10px;
   border: 1px solid #eee;
   border-radius: 8px;
