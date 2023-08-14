@@ -184,7 +184,7 @@ export default function AllergyInfo() {
                 checked={isDisclaimerChecked}
                 onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)} 
               />
-              <span onClick={() => Disclaimer()}>בבקשה אשר את תנאי השירות</span> 
+              <span onClick={<Disclaimer />}>בבקשה אשר את תנאי השירות</span> 
             </label>
           </form>
     </>
