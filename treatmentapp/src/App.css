@@ -61,7 +61,7 @@ button:hover {
 
 .allergy-div,
 .symptomsDiv,
-.anti-allergens-div {
+.Anti-Allergens-Div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
