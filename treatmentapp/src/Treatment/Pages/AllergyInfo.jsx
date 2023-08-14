@@ -10,6 +10,7 @@ export default function AllergyInfo() {
   const [symptoms, setSymptoms] = useState([]);
   const [selectedAllergy, setSelectedAllergy] = useState('');
   const [flag, setFlag] = useState(true);
+  const [isDisclaimerChecked, setIsDisclaimerChecked] = useState(false);
 
   const [formData, setFormData] = useState({
     name: selectedAllergy,
@@ -35,7 +36,7 @@ export default function AllergyInfo() {
     formData.selectedSymptoms = symptoms;
 
     if (!isDisclaimerChecked) {
-      alert("Please approve the Disclaimer before proceeding.");
+      alert("בבקשה אשר את תנאי השירות");
       return;
     }
 
