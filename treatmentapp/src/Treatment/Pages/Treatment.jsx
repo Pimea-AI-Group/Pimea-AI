@@ -69,7 +69,8 @@ export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
-  
+  const [currentSoundIndex, setCurrentSoundIndex] = useState(0);
+
 
   const allergies = [
     { name: 'Cat', audio: Cat, screenName: 'חתולים' },
