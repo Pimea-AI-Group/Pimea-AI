@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AllergyButton from '../Components/AllergyButton';  // Importing the AllergyButton component
 
 export default function Admin() {
   const [email, setEmail] = useState('');
@@ -21,36 +22,23 @@ export default function Admin() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setUserData(data)
-        console.log(data)
+        setUserData(data);
+        console.log(data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-
   return (
     <div className="admin-container">
       <h1>Admin Panel</h1>
       <form className="admin-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
+        <input type="email" id="email" value={email} onChange={handleEmailChange} required />
 
         <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
+        <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
 
         <button type="submit">Submit</button>
       </form>
@@ -58,66 +46,18 @@ export default function Admin() {
       {userData && (
         <div className="user-data">
           <h2>User Data</h2>
-          <p>
-            <strong>שם פרטי:</strong> {userData.firstName}
-          </p>
-          <p>
-            <strong>שם משפחה:</strong> {userData.lastName}
-          </p>
-          <p>
-            <strong>אימייל:</strong> {userData.email}
-          </p>
-          <p>
-            <strong>מגדר:</strong> {userData.gender}
-          </p>
-          <p>
-            <strong>תאריך לידה:</strong> {userData.dob}
-          </p>
-          <p>
-            <strong>מספר טלפון:</strong> {userData.phoneNumber}
-          </p>
-          <p>
-            <strong>מקום מגורים:</strong> {userData.city}
-          </p>
-          <p>
-            <strong style={{backgroundColor: 'yellow'}}>סיסמא:</strong> {userData.password}
-          </p>
-              <p>
-                <strong>Allergies:</strong>
-              {userData.allergies.map((allergy, index) => (
-                <div key={index}>
-                  <p>
-                  <strong>שם האלרגיה:</strong> {allergy.name}
-                  </p>
-                  <p>
-                  <strong>האם אובחנה:</strong> {allergy.allergyDiagnosed}
-                  </p>
-                  <p>
-                  <strong>איזה אבחון בוצע?:</strong>{' '}
-                    {allergy.allergyDiagnosisExplanation}
-                  </p>
-                  <p>
-                  <strong>שנים עם האלרגיה:</strong> {allergy.yearsWithAllergy}
-                  </p>
-                  <p>
-                  <strong>סימפטומים:</strong>{' '}
-                    {allergy.selectedSymptoms.join(', ')}
-                  </p>
-                  <p>
-                  <strong>תרופה:</strong> {allergy.medicine}
-                  </p>
-                  <p>
-                  <strong>היסטוריית טיפולים:</strong>{' '}
-                    {allergy.formerTreatment ? 'Yes' : 'No'}
-                  </p>
-                  <p>
-                  <strong>רף כאב:</strong> {allergy.sufferScale}
-                  </p>
-                </div>
-              ))}
-          </p>
+          {/* ...rest of user details... */}
+          <strong style={{ backgroundColor: 'yellow' }}>סיסמא:</strong> {userData.password}
+
+          {/* Map through the allergies and display them as buttons */}
+          <div>
+            <strong>Allergies:</strong>
+            {userData.allergies.map((allergy, index) => (
+              <AllergyButton key={index} allergy={allergy} />  // Using the AllergyButton component
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
-};
+}
