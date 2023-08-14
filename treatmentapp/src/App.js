@@ -14,25 +14,38 @@ const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/So
 const BackgroundAudio = audioUrl + 'Background+Music.mp3'; 
 
 function App() {
-  const audioRef = useRef(null);
+  const audioRef = useRef(null);  // Reference to the audio element
 
   useEffect(() => {
-    audioRef.current.play();
+    // Event listener to play audio once user interacts with the document
+    const handleUserInteraction = () => {
+      if (audioRef && audioRef.current && audioRef.current.paused) {
+        audioRef.current.play();
+        // Removing the event listener after the audio starts playing
+        document.removeEventListener('click', handleUserInteraction);
+      }
+    };
+
+    document.addEventListener('click', handleUserInteraction);
+
+    return () => {
+      // Cleanup to remove the event listener on unmount
+      document.removeEventListener('click', handleUserInteraction);
+    };
   }, []);
 
   return (
     <div className='container'>
-      <audio src={BackgroundAudio} ref={audioRef} controls autoPlay loop />
+      {/* Audio component without autoPlay to avoid DOMException */}
+      <audio src={BackgroundAudio} ref={audioRef} controls loop />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/allergies' element={<Allergies />} />
           <Route path='/calandly' element={<CalandlyLink />} />
-
           <Route path="/login" element={<LogIn />} />
           <Route path="/allergyinfo" element={<AllergyInfo />} />
           <Route path="/treatment" element={<Treatment />} />
-
           <Route path='/admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
