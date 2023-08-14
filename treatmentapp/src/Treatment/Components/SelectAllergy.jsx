@@ -24,7 +24,7 @@ export default function SelectAllergy(props) {
 
     return (
         <div>
-            <h1>באילו מהאלרגיות שלך תרצה שנטפל היום?</h1>
+            <h1>באיזו אלרגיה נטפל היום?</h1>
             {selectedAllergyArray.map((allergy) => {
                 const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
                 <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />

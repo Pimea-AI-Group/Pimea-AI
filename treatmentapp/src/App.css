@@ -9,9 +9,9 @@ body {
   background-size: cover;
 }
 
-/* .audio {
+.audio {
   visibility: hidden;
-} */
+}
 
 .container,
 .admin-container {
