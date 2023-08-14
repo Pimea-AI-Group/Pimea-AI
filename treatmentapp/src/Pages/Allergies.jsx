@@ -66,7 +66,7 @@ export default function Allergies() {
 
     // Function to render allergies from allergiesArray
     const renderAllergies = allergiesArray.map((allergy) => (
-        <label className='allergyCheckbox' key={allergy.name}>
+        <label className={`allergyCheckbox ${selectedAllergies.some(sel => sel.name === allergy.name) ? 'selectedAllergy' : ''}`} key={allergy.name}>
             <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
             <span className="checkbox-image">
                 <input

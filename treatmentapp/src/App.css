@@ -91,9 +91,10 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.allergyCheckbox:checked {
-  border: 5px solid black;
+.selectedAllergy {
+  background-color: white;
 }
+
 
 .checkbox-image {
   display: none;
