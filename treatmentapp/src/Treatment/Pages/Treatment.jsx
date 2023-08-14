@@ -61,6 +61,7 @@ const DustMites = `${soundUrl}Allergy/Dust Bunny.mp3`;
 const PineBloom = `${soundUrl}Allergy/Pine Bloom.mp3`;
 const HayFever = `${soundUrl}Allergy/Hay Feber.mp3`;
 const Latex = `${soundUrl}Allergy/Latex.mp3`;
+const Ready = `${soundUrl}Ready+To+Continue.mp3`;
 
 
 
@@ -88,24 +89,24 @@ export default function Treatment() {
   const allergySound = setAudio(allergy)
   const relaxSounds = [GuidedRelaxation1_10, GuidedRelaxation2_15];
   const soundFiles = [
-    [introPart1, allergySound, introPart2],
-    [introPart3, allergySound, introPart4, allergySound, introPart5, IdentifyingTheDominantSense6, allergySound, IdentifyingTheDominantSense7, allergySound, IdentifyingTheDominantSense8, allergySound, IdentifyingTheDominantSense9, allergySound],
-    [IdentifyingAntiAllergen11, allergySound, IdentifyingAntiAllergen12, allergySound, IdentifyingAntiAllergen13, allergySound, IdentifyingAntiAllergen14],
-    [ExpandTheAntiAllergenExperience16, antiAllergen, ExpandTheAntiAllergenExperience17, antiAllergen, ExpandTheAntiAllergenExperience18],
-    [ProtectiveImagery19],
-    [MemoryOfAllergyResponse1_20, antiAllergen],
-    [ConnectionToAntiAllergenAndProtection1_21, antiAllergen, ConnectionToAntiAllergenAndProtection1_22],
-    [FinishingMemory1_23],
-    [MemoryOfAllergyResponse2_24],
-    [ConnectionToAntiAllergenAndProtection2_25, antiAllergen, ConnectionToAntiAllergenAndProtection2_26, antiAllergen],
-    [FinishingMemory2_27, allergySound, FinishingMemory2_28, antiAllergen],
-    [MemoryOfAllergyResponse3_29],
-    [ConnectionToAntiAllergenAndProtection3_30],
-    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, allergySound, FinishingMemory3_36, antiAllergen, FinishingMemory3_37],
-    [FutureSituation38, allergySound, FutureSituation39, allergySound, FutureSituation40],
-    [ConnectionToAntiAllergen41, allergySound, ConnectionToAntiAllergen42, antiAllergen, ConnectionToAntiAllergen43, allergySound, ConnectionToAntiAllergen44, antiAllergen],
-    [FinishingMemory4_45, allergySound],
-    [GuidingToPysicalEncounter46, allergySound, GuidingToPysicalEncounter47, allergySound, GuidingToPysicalEncounter48, antiAllergen, GuidingToPysicalEncounter49]
+    [introPart1, allergySound, introPart2, Ready],
+    [introPart3, allergySound, introPart4, allergySound, introPart5, IdentifyingTheDominantSense6, allergySound, IdentifyingTheDominantSense7, allergySound, IdentifyingTheDominantSense8, allergySound, IdentifyingTheDominantSense9, allergySound, Ready],
+    [IdentifyingAntiAllergen11, allergySound, IdentifyingAntiAllergen12, allergySound, IdentifyingAntiAllergen13, allergySound, IdentifyingAntiAllergen14, Ready],
+    [ExpandTheAntiAllergenExperience16, antiAllergen, ExpandTheAntiAllergenExperience17, antiAllergen, ExpandTheAntiAllergenExperience18, Ready],
+    [ProtectiveImagery19, Ready],
+    [MemoryOfAllergyResponse1_20, antiAllergen, Ready],
+    [ConnectionToAntiAllergenAndProtection1_21, antiAllergen, ConnectionToAntiAllergenAndProtection1_22, Ready],
+    [FinishingMemory1_23, Ready],
+    [MemoryOfAllergyResponse2_24, Ready],
+    [ConnectionToAntiAllergenAndProtection2_25, antiAllergen, ConnectionToAntiAllergenAndProtection2_26, antiAllergen, Ready],
+    [FinishingMemory2_27, allergySound, FinishingMemory2_28, antiAllergen, Ready],
+    [MemoryOfAllergyResponse3_29, Ready],
+    [ConnectionToAntiAllergenAndProtection3_30, Ready],
+    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, allergySound, FinishingMemory3_36, antiAllergen, FinishingMemory3_37, Ready],
+    [FutureSituation38, allergySound, FutureSituation39, allergySound, FutureSituation40, Ready],
+    [ConnectionToAntiAllergen41, allergySound, ConnectionToAntiAllergen42, antiAllergen, ConnectionToAntiAllergen43, allergySound, ConnectionToAntiAllergen44, antiAllergen, Ready],
+    [FinishingMemory4_45, allergySound, Ready],
+    [GuidingToPysicalEncounter46, allergySound, GuidingToPysicalEncounter47, allergySound, GuidingToPysicalEncounter48, antiAllergen, GuidingToPysicalEncounter49, Ready]
   ];
 
   const [index, setIndex] = useState(0);
