@@ -227,6 +227,18 @@ export default function Treatment() {
     setAntiAllergen(audio);
   };
 
+  const getRelaxSound = () => {
+    // You can return the sound you want to play when it's a relax sound.
+    // For example:
+    return soundUrl + relaxSounds[currentSoundIndex];
+  };
+  
+  const getCurrentSound = () => {
+    // You can return the current sound based on your logic.
+    // For example:
+    return soundUrl + soundFiles[currentSoundIndex];
+  };
+  
   return (
     <div>
       <h1>דימיון מודרך</h1>
