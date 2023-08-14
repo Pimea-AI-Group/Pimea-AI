@@ -86,7 +86,7 @@ export default function Allergies() {
 
     return (
         <div>
-            <h1>באילו אלרגיות תשמח שנטפל?</h1>
+            <h1>באילו אלרגיות נוכל לטפל?</h1>
             <h3>בבקשה לסמן רק אלרגיות שאינן מסכנות חיים</h3>
             <div className='allergyDiv'>
                 {renderAllergies}
