@@ -30,7 +30,7 @@ export default function Admin() {
 
   return (
     <div className="admin-container">
-      <h1>Admin Panel</h1>
+      <h1>לוח ניהול</h1>
       <form className="admin-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" value={email} onChange={handleEmailChange} required />
@@ -43,7 +43,7 @@ export default function Admin() {
 
       {userData && (
         <div className="user-data">
-          <h2>User Data</h2>
+          <h2>מידע לקוח</h2>
           <p>
             <strong>שם פרטי:</strong> {userData.firstName}
           </p>

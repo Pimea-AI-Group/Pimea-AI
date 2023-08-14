@@ -9,11 +9,12 @@ body {
   background-size: cover;
 }
 
-/* audio {
+/* .audio {
   visibility: hidden;
 } */
 
-.container {
+.container,
+.admin-container {
   max-width: 400px;
   margin: 50px auto;
   background-color: transparent;
@@ -28,11 +29,13 @@ h1 {
   padding-bottom: 10px;
 }
 
+.admin-form label,
 label {
   display: block;
   margin-bottom: 15px;
 }
 
+.admin-form input,
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -45,7 +48,8 @@ select {
   border-radius: 4px;
 }
 
-button {
+button,
+button[type="submit"] {
   background-color: #007bff;
   color: #fff;
   padding: 10px 15px;
@@ -55,13 +59,22 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
+button:hover,
+button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+.user-data {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .allergy-div,
 .symptomsDiv,
-.Anti-Allergens-Div {
+.Anti-Allergens-Div,
+div > div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -69,7 +82,6 @@ button:hover {
   align-content: space-between;
   justify-content: space-between;
 }
-
 
 .antiAllergenCheckbox,
 .symptomCheckbox {
