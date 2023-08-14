@@ -19,12 +19,12 @@ export default function AntiAllergen(props) {
     if (checked) {
       setSelectedAntiAllergen(value);
       props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
-    } 
+    }
   };
 
   // Function to render antiAllergens from antiAllergen
   const renderAntiAllergen = antiAllergen.map((allergen) => (
-    <label className='antiAllergenCheckbox' key={allergen.name}>
+    <label className={`antiAllergenCheckbox ${selectedAntiAllergen === allergen.audioName ? 'selectedAntiAllergen' : ''}`} key={allergen.name}>
       <img src={`${imageUrl}${allergen.imageName.replace(' ', '+')}.jpg`} alt={allergen.name} />
       <span className="checkbox-image">
         <input
@@ -37,6 +37,7 @@ export default function AntiAllergen(props) {
       {allergen.name}
     </label>
   ));
+
 
   return (
     <div>
