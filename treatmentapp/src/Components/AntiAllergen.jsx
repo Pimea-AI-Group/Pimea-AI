@@ -23,18 +23,18 @@ export default function AntiAllergen(props) {
   };
 
   // Function to render antiAllergens from antiAllergen
-  const renderAntiAllergen = antiAllergen.map((element) => (
-    <label className='antiAllergenCheckbox' key={element.name}>
-      <img style={{ backgroundImage: `${imageUrl}${element.imageName.replace(' ', '+')}.jpg)` }} alt={element.name} />
+  const renderAntiAllergen = antiAllergen.map((allergen) => (
+    <label className='antiAllergenCheckbox' key={allergen.name}>
+      <img src={`${imageUrl}${allergen.imageName.replace(' ', '+')}.jpg`} alt={allergen.name} />
       <span className="checkbox-image">
         <input
-          type="radio"
-          value={element.audioName}
-          checked={selectedAntiAllergen === element.audioName}
+          type="checkbox"
+          value={allergen.audioName}
+          checked={selectedAntiAllergen === allergen.audioName}
           onChange={handleCheckboxChange}
         />
       </span>
-      {element.name}
+      {allergen.name}
     </label>
   ));
 

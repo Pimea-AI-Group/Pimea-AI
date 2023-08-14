@@ -67,11 +67,10 @@ const Latex = `${soundUrl}Allergy/Latex.mp3`;
 export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
-  console.log(allergy);
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   const allergies = [
-    { name: 'Cat', audio: Cat, screenName: 'חתולים'},
+    { name: 'Cat', audio: Cat, screenName: 'חתולים' },
     { name: 'Dog', audio: Dog, screenName: 'כלבים' },
     { name: 'Grass', audio: Grass, screenName: 'דשא' },
     { name: 'Dust Bunny', audio: DustMites, screenName: 'קרדית האבק' },
@@ -82,10 +81,7 @@ export default function Treatment() {
 
   const setAudio = (allergyName) => {
     let matchingAllergy;
-
-    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)  
-    console.log(matchingAllergy);
-
+    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)
     return matchingAllergy.audio;
   };
 
