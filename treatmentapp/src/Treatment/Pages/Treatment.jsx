@@ -19,6 +19,7 @@ export default function Treatment() {
   else {
     soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Male/'
   }
+  const Ready = `${soundUrl}Ready+To+Continue.mp3`;
 
   const allergies = [
     { name: 'Cat', audio: `${allergyUrl}Cat.mp3`, screenName: 'חתולים' },
@@ -56,7 +57,7 @@ export default function Treatment() {
       Ready
     ],
     [
-      `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
+      `${soundUrl}IdentifyingAnti-Allergen1.mp3`,
       allergySound,
       `${soundUrl}IdentifyingAnti-Allergen12.mp3`,
       allergySound,
