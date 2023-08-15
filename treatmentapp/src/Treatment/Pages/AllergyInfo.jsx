@@ -11,8 +11,8 @@ export default function AllergyInfo() {
   const [symptoms, setSymptoms] = useState([]);
   const [selectedAllergy, setSelectedAllergy] = useState('');
   const [flag, setFlag] = useState(true);
-  const [isDisclaimerChecked, setIsDisclaimerChecked] = useState(false);
-  const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [flagDis, setFlagDis] = useState(false);
+
 
 
   const [formData, setFormData] = useState({
@@ -63,6 +63,12 @@ export default function AllergyInfo() {
 
   const show = () => {
     return <Symptoms setSymptoms={setSymptoms} />
+  }
+
+  const showDisclaimer = () => {
+    if (flagDis) {
+      return <Disclaimer />;
+    }
   }
 
 
@@ -186,8 +192,9 @@ export default function AllergyInfo() {
                 checked={isDisclaimerChecked}
                 onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)}
               />
-              <span onClick={() => setShowDisclaimer(true)}>בבקשה אשר את תנאי השירות</span>
-              {showDisclaimer && <Disclaimer />}
+              <button onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</button>
+              {showDisclaimer()}
+              {flagDis && <Disclaimer />}
             </label>
           </form>
         </>

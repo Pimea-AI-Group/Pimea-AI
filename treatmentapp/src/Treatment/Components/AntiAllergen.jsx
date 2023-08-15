@@ -53,8 +53,8 @@ const antiAllergen = [
   { name: 'כפפות צמר', imageName: 'Wool Gloves', audioName: 'Wool Gloves' },
 ];
 
-export default function AntiAllergen(props, { setShowAntiAllergen, setIndex, index, setIsPlaying }) {
-  const navigate = useNavigate();
+export default function AntiAllergen(props) {
+  let nav = useNavigate();
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
   
 
@@ -63,9 +63,6 @@ export default function AntiAllergen(props, { setShowAntiAllergen, setIndex, ind
     if (checked) {
       setSelectedAntiAllergen(value);
       props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
-      setShowAntiAllergen(false); // Hide the component
-      setIndex(index + 1); // Continue with the next audio
-      setIsPlaying(true); // Play the next audio
     }
 };
   const handleButtonClick = (audio, buttonIndex) => {
@@ -92,8 +89,8 @@ export default function AntiAllergen(props, { setShowAntiAllergen, setIndex, ind
 
   return (
     <div>
-      {antiAllergen.map((item, index) => (
-        <button className='antiAllergenCheckbox' key={index} onClick={() => handleButtonClick(item.audioName, index)}>
+      {antiAllergens.map((item, index) => (
+        <button key={index} onClick={() => handleButtonClick(item.audioName, index)}>
           <img src={`${imageUrl}${item.imageName}.jpg`} alt={item.name} />
           <span>{item.name}</span>
         </button>

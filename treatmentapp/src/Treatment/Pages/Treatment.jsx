@@ -69,9 +69,6 @@ export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
-  const [currentSoundIndex, setCurrentSoundIndex] = useState(0);
-  const [showAntiAllergen, setShowAntiAllergen] = useState(false);
-
 
   const allergies = [
     { name: 'Cat', audio: Cat, screenName: 'חתולים' },
@@ -84,7 +81,9 @@ export default function Treatment() {
   ];
 
   const setAudio = (allergyName) => {
-    return allergies.find(a => a.name === allergyName).audio;
+    let matchingAllergy;
+    matchingAllergy = allergies.find((a) => `${a.name}` === `${allergyName}`)
+    return matchingAllergy.audio;
   };
 
   const allergySound = setAudio(allergy)
@@ -176,10 +175,6 @@ export default function Treatment() {
 
   const handleAudioEnd = () => {
     setIsPlaying(false);
-    if (batch === 2 && index === 2) { // Assuming IdentifyingAntiAllergen13 is at index 2 in batch 2
-      setShowAntiAllergen(true);
-      return; // We return here to prevent further audio from playing
-    }
     if (isRelaxSound) {
       setIsRelaxSound(false);
       setIsBatchCompleted(true);
@@ -231,32 +226,17 @@ export default function Treatment() {
     setAntiAllergen(audio);
   };
 
-  const getRelaxSound = () => {
-    // You can return the sound you want to play when it's a relax sound.
-    // For example:
-    return soundUrl + relaxSounds[currentSoundIndex];
-  };
-
-  const getCurrentSound = () => {
-    // You can return the current sound based on your logic.
-    // For example:
-    return soundUrl + soundFiles[currentSoundIndex];
-  };
-
   return (
     <div>
       <h1>דימיון מודרך</h1>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
-        <source src={isRelaxSound ? getRelaxSound() : getCurrentSound()} type="audio/mpeg" />
+        <source src={isRelaxSound ? relaxSounds[Math.floor(Math.random() * relaxSounds.length)] : soundFiles[batch][index]} type="audio/mpeg" />
       </audio>
-      {showAntiAllergen && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
+
       {isBatchCompleted && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-      {flag && <AntiAllergen
-        setShowAntiAllergen={setShowAntiAllergen}
-        setIndex={setIndex}
-        index={index}
-        setIsPlaying={setIsPlaying}
-      />}
+
+      {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
+
     </div>
   );
 }
