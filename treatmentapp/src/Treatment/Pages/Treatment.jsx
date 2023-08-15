@@ -5,62 +5,62 @@ import AntiAllergen from '../Components/AntiAllergen';
 const soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/'
 
 // Initializing URLs for various sound files
-const introPart1 = `${soundUrl}IntroPart1(Male).mp3`;
-const introPart2 = `${soundUrl}IntroPart2(Male).mp3`;
-const introPart3 = `${soundUrl}IntroPart3(Male).mp3`;
-const introPart4 = `${soundUrl}IntroPart4(Male).mp3`;
-const introPart5 = `${soundUrl}IntroPart5(Male).mp3`;
-const IdentifyingTheDominantSense6 = `${soundUrl}IdentifyingTheDominantSense6.mp3`;
-const IdentifyingTheDominantSense7 = `${soundUrl}IdentifyingTheDominantSense7.mp3`;
-const IdentifyingTheDominantSense8 = `${soundUrl}IdentifyingTheDominantSense8.mp3`;
-const IdentifyingTheDominantSense9 = `${soundUrl}IdentifyingTheDominantSense9.mp3`;
-const GuidedRelaxation1_10 = `${soundUrl}GuidedRelaxation1-10.mp3`;
-const IdentifyingAntiAllergen11 = `${soundUrl}IdentifyingAnti-Allergen11.mp3`;
-const IdentifyingAntiAllergen12 = `${soundUrl}IdentifyingAnti-Allergen12.mp3`;
-const IdentifyingAntiAllergen13 = `${soundUrl}IdentifyingAnti-Allergen13.mp3`;
-const IdentifyingAntiAllergen14 = `${soundUrl}IdentifyingAnti-Allergen14.mp3`;
-const GuidedRelaxation2_15 = `${soundUrl}GuidedRelaxation2-15.mp3`;
-const ExpandTheAntiAllergenExperience16 = `${soundUrl}ExpandTheAnti-AllergenExperience16.mp3`;
-const ExpandTheAntiAllergenExperience17 = `${soundUrl}ExpandTheAnti-AllergenExperience17.mp3`;
-const ExpandTheAntiAllergenExperience18 = `${soundUrl}ExpandTheAnti-AllergenExperience18.mp3`;
-const ProtectiveImagery19 = `${soundUrl}ProtectiveImagery19.mp3`;
-const MemoryOfAllergyResponse1_20 = `${soundUrl}MemoryOfAllergyResponse1-20.mp3`;
-const ConnectionToAntiAllergenAndProtection1_21 = `${soundUrl}ConnectionToAnti-AllergenAndProtection1-21.mp3`;
-const ConnectionToAntiAllergenAndProtection1_22 = `${soundUrl}ConnectionToAnti-AllergenAndProtection1-22.mp3`;
-const FinishingMemory1_23 = `${soundUrl}FinishingMemory1-23.mp3`;
-const MemoryOfAllergyResponse2_24 = `${soundUrl}MemoryOfAllergyResponse2-24.mp3`;
-const ConnectionToAntiAllergenAndProtection2_25 = `${soundUrl}ConnectionToAnti-AllergenAndProtection2-25.mp3`;
-const ConnectionToAntiAllergenAndProtection2_26 = `${soundUrl}ConnectionToAnti-AllergenAndProtection2-26.mp3`;
-const FinishingMemory2_27 = `${soundUrl}FinishingMemory2-27.mp3`;
-const FinishingMemory2_28 = `${soundUrl}FinishingMemory2-28.mp3`;
-const MemoryOfAllergyResponse3_29 = `${soundUrl}MemoryOfAllergyResponse3-29.mp3`;
-const ConnectionToAntiAllergenAndProtection3_30 = `${soundUrl}ConnectionToAnti-AllergenAndProtection3-30.mp3`;
-const FinishingMemory3_31 = `${soundUrl}FinishingMemory3-31.mp3`;
-const FinishingMemory3_32 = `${soundUrl}FinishingMemory3-32.mp3`;
-const FinishingMemory3_33 = `${soundUrl}FinishingMemory3-33.mp3`;
-const FinishingMemory3_34 = `${soundUrl}FinishingMemory3-34.mp3`;
-const FinishingMemory3_35 = `${soundUrl}FinishingMemory3-35.mp3`;
-const FinishingMemory3_36 = `${soundUrl}FinishingMemory3-36.mp3`;
-const FinishingMemory3_37 = `${soundUrl}FinishingMemory3-37.mp3`;
-const FutureSituation38 = `${soundUrl}FutureSituation38.mp3`;
-const FutureSituation39 = `${soundUrl}FutureSituation39.mp3`;
-const FutureSituation40 = `${soundUrl}FutureSituation40.mp3`;
-const ConnectionToAntiAllergen41 = `${soundUrl}ConnectionToAnti-Allergen41.mp3`;
-const ConnectionToAntiAllergen42 = `${soundUrl}ConnectionToAnti-Allergen42.mp3`;
-const ConnectionToAntiAllergen43 = `${soundUrl}ConnectionToAnti-Allergen43.mp3`;
-const ConnectionToAntiAllergen44 = `${soundUrl}ConnectionToAnti-Allergen44.mp3`;
-const FinishingMemory4_45 = `${soundUrl}FinishingMemory4-45.mp3`;
-const GuidingToPysicalEncounter46 = `${soundUrl}GuidingToPysicalEncounter46.mp3`;
-const GuidingToPysicalEncounter47 = `${soundUrl}GuidingToPysicalEncounter47.mp3`;
-const GuidingToPysicalEncounter48 = `${soundUrl}GuidingToPysicalEncounter48.mp3`;
-const GuidingToPysicalEncounter49 = `${soundUrl}GuidingToPysicalEncounter49.mp3`;
+// const introPart1 = `${soundUrl}IntroPart1(Male).mp3`;
+// const introPart2 = `${soundUrl}IntroPart2(Male).mp3`;
+// const introPart3 = `${soundUrl}IntroPart3(Male).mp3`;
+// const introPart4 = `${soundUrl}IntroPart4(Male).mp3`;
+// const introPart5 = `${soundUrl}IntroPart5(Male).mp3`;
+// const IdentifyingTheDominantSense6 = `${soundUrl}IdentifyingTheDominantSense6.mp3`;
+// const IdentifyingTheDominantSense7 = `${soundUrl}IdentifyingTheDominantSense7.mp3`;
+// const IdentifyingTheDominantSense8 = `${soundUrl}IdentifyingTheDominantSense8.mp3`;
+// const IdentifyingTheDominantSense9 = `${soundUrl}IdentifyingTheDominantSense9.mp3`;
+// const GuidedRelaxation1_10 = `${soundUrl}GuidedRelaxation1-10.mp3`;
+// const IdentifyingAntiAllergen11 = `${soundUrl}IdentifyingAnti-Allergen11.mp3`;
+// const IdentifyingAntiAllergen12 = `${soundUrl}IdentifyingAnti-Allergen12.mp3`;
+// const IdentifyingAntiAllergen13 = `${soundUrl}IdentifyingAnti-Allergen13.mp3`;
+// const IdentifyingAntiAllergen14 = `${soundUrl}IdentifyingAnti-Allergen14.mp3`;
+// const GuidedRelaxation2_15 = `${soundUrl}GuidedRelaxation2-15.mp3`;
+// const ExpandTheAntiAllergenExperience16 = `${soundUrl}ExpandTheAnti-AllergenExperience16.mp3`;
+// const ExpandTheAntiAllergenExperience17 = `${soundUrl}ExpandTheAnti-AllergenExperience17.mp3`;
+// const ExpandTheAntiAllergenExperience18 = `${soundUrl}ExpandTheAnti-AllergenExperience18.mp3`;
+// const ProtectiveImagery19 = `${soundUrl}ProtectiveImagery19.mp3`;
+// const MemoryOfAllergyResponse1_20 = `${soundUrl}MemoryOfAllergyResponse1-20.mp3`;
+// const ConnectionToAntiAllergenAndProtection1_21 = `${soundUrl}ConnectionToAnti-AllergenAndProtection1-21.mp3`;
+// const ConnectionToAntiAllergenAndProtection1_22 = `${soundUrl}ConnectionToAnti-AllergenAndProtection1-22.mp3`;
+// const FinishingMemory1_23 = `${soundUrl}FinishingMemory1-23.mp3`;
+// const MemoryOfAllergyResponse2_24 = `${soundUrl}MemoryOfAllergyResponse2-24.mp3`;
+// const ConnectionToAntiAllergenAndProtection2_25 = `${soundUrl}ConnectionToAnti-AllergenAndProtection2-25.mp3`;
+// const ConnectionToAntiAllergenAndProtection2_26 = `${soundUrl}ConnectionToAnti-AllergenAndProtection2-26.mp3`;
+// const FinishingMemory2_27 = `${soundUrl}FinishingMemory2-27.mp3`;
+// const FinishingMemory2_28 = `${soundUrl}FinishingMemory2-28.mp3`;
+// const MemoryOfAllergyResponse3_29 = `${soundUrl}MemoryOfAllergyResponse3-29.mp3`;
+// const ConnectionToAntiAllergenAndProtection3_30 = `${soundUrl}ConnectionToAnti-AllergenAndProtection3-30.mp3`;
+// const FinishingMemory3_31 = `${soundUrl}FinishingMemory3-31.mp3`;
+// const FinishingMemory3_32 = `${soundUrl}FinishingMemory3-32.mp3`;
+// const FinishingMemory3_33 = `${soundUrl}FinishingMemory3-33.mp3`;
+// const FinishingMemory3_34 = `${soundUrl}FinishingMemory3-34.mp3`;
+// const FinishingMemory3_35 = `${soundUrl}FinishingMemory3-35.mp3`;
+// const FinishingMemory3_36 = `${soundUrl}FinishingMemory3-36.mp3`;
+// const FinishingMemory3_37 = `${soundUrl}FinishingMemory3-37.mp3`;
+// const FutureSituation38 = `${soundUrl}FutureSituation38.mp3`;
+// const FutureSituation39 = `${soundUrl}FutureSituation39.mp3`;
+// const FutureSituation40 = `${soundUrl}FutureSituation40.mp3`;
+// const ConnectionToAntiAllergen41 = `${soundUrl}ConnectionToAnti-Allergen41.mp3`;
+// const ConnectionToAntiAllergen42 = `${soundUrl}ConnectionToAnti-Allergen42.mp3`;
+// const ConnectionToAntiAllergen43 = `${soundUrl}ConnectionToAnti-Allergen43.mp3`;
+// const ConnectionToAntiAllergen44 = `${soundUrl}ConnectionToAnti-Allergen44.mp3`;
+// const FinishingMemory4_45 = `${soundUrl}FinishingMemory4-45.mp3`;
+// const GuidingToPysicalEncounter46 = `${soundUrl}GuidingToPysicalEncounter46.mp3`;
+// const GuidingToPysicalEncounter47 = `${soundUrl}GuidingToPysicalEncounter47.mp3`;
+// const GuidingToPysicalEncounter48 = `${soundUrl}GuidingToPysicalEncounter48.mp3`;
+// const GuidingToPysicalEncounter49 = `${soundUrl}GuidingToPysicalEncounter49.mp3`;
 // const Cat = `${soundUrl}Allergy/Cat.mp3`;
-const Dog = `${soundUrl}Allergy/Dog.mp3`;
-const Grass = `${soundUrl}Allergy/Grass.mp3`;
-const DustMites = `${soundUrl}Allergy/Dust Bunny.mp3`;
-const PineBloom = `${soundUrl}Allergy/Pine Bloom.mp3`;
-const HayFever = `${soundUrl}Allergy/Hay Feber.mp3`;
-const Latex = `${soundUrl}Allergy/Latex.mp3`;
+// const Dog = `${soundUrl}Allergy/Dog.mp3`;
+// const Grass = `${soundUrl}Allergy/Grass.mp3`;
+// const DustMites = `${soundUrl}Allergy/Dust Bunny.mp3`;
+// const PineBloom = `${soundUrl}Allergy/Pine Bloom.mp3`;
+// const HayFever = `${soundUrl}Allergy/Hay Feber.mp3`;
+// const Latex = `${soundUrl}Allergy/Latex.mp3`;
 const Ready = `${soundUrl}Ready+To+Continue.mp3`;
 
 
@@ -72,12 +72,12 @@ export default function Treatment() {
 
   const allergies = [
     { name: 'Cat', audio: `${soundUrl}Allergy/Cat.mp3`, screenName: 'חתולים' },
-    { name: 'Dog', audio: Dog, screenName: 'כלבים' },
-    { name: 'Grass', audio: Grass, screenName: 'דשא' },
-    { name: 'Dust Bunny', audio: DustMites, screenName: 'קרדית האבק' },
-    { name: 'Pine Bloom', audio: PineBloom, screenName: 'פריחת עץ האורן' },
-    { name: 'Hay Fever', audio: HayFever, screenName: 'קדחת השחת' },
-    { name: 'Latex', audio: Latex, screenName: 'לאטקס' }
+    { name: 'Dog', audio: `${soundUrl}Allergy/Dog.mp3`, screenName: 'כלבים' },
+    { name: 'Grass', audio: `${soundUrl}Allergy/Grass.mp3`, screenName: 'דשא' },
+    { name: 'Dust Bunny', audio: `${soundUrl}Allergy/Dust Bunny.mp3`, screenName: 'קרדית האבק' },
+    { name: 'Pine Bloom', audio: `${soundUrl}Allergy/Hay Feber.mp3`, screenName: 'פריחת עץ האורן' },
+    { name: 'Hay Fever', audio: `${soundUrl}Allergy/Hay Feber.mp3`, screenName: 'קדחת השחת' },
+    { name: 'Latex', audio: `${soundUrl}Allergy/Latex.mp3`, screenName: 'לאטקס' }
   ];
 
   const setAudio = (allergyName) => {
@@ -87,26 +87,142 @@ export default function Treatment() {
   };
 
   const allergySound = setAudio(allergy)
-  const relaxSounds = [GuidedRelaxation1_10, GuidedRelaxation2_15];
+  const relaxSounds = [`${soundUrl}GuidedRelaxation1-10.mp3`, `${soundUrl}GuidedRelaxation2-15.mp3`];
   const soundFiles = [
-    [introPart1, allergySound, introPart2],
-    [introPart3, allergySound, introPart4, allergySound, introPart5, IdentifyingTheDominantSense6, allergySound, IdentifyingTheDominantSense7, allergySound, IdentifyingTheDominantSense8, allergySound, IdentifyingTheDominantSense9, allergySound, Ready],
-    [IdentifyingAntiAllergen11, allergySound, IdentifyingAntiAllergen12, allergySound, IdentifyingAntiAllergen13, allergySound, IdentifyingAntiAllergen14, Ready],
-    [ExpandTheAntiAllergenExperience16, antiAllergen, ExpandTheAntiAllergenExperience17, antiAllergen, ExpandTheAntiAllergenExperience18, Ready],
-    [ProtectiveImagery19, Ready],
-    [MemoryOfAllergyResponse1_20, antiAllergen, Ready],
-    [ConnectionToAntiAllergenAndProtection1_21, antiAllergen, ConnectionToAntiAllergenAndProtection1_22, Ready],
-    [FinishingMemory1_23, Ready],
-    [MemoryOfAllergyResponse2_24, Ready],
-    [ConnectionToAntiAllergenAndProtection2_25, antiAllergen, ConnectionToAntiAllergenAndProtection2_26, antiAllergen, Ready],
-    [FinishingMemory2_27, allergySound, FinishingMemory2_28, antiAllergen, Ready],
-    [MemoryOfAllergyResponse3_29, Ready],
-    [ConnectionToAntiAllergenAndProtection3_30, Ready],
-    [FinishingMemory3_31, antiAllergen, FinishingMemory3_32, allergySound, FinishingMemory3_33, allergySound, FinishingMemory3_34, allergySound, FinishingMemory3_35, allergySound, FinishingMemory3_36, antiAllergen, FinishingMemory3_37, Ready],
-    [FutureSituation38, allergySound, FutureSituation39, allergySound, FutureSituation40, Ready],
-    [ConnectionToAntiAllergen41, allergySound, ConnectionToAntiAllergen42, antiAllergen, ConnectionToAntiAllergen43, allergySound, ConnectionToAntiAllergen44, antiAllergen, Ready],
-    [FinishingMemory4_45, allergySound, Ready],
-    [GuidingToPysicalEncounter46, allergySound, GuidingToPysicalEncounter47, allergySound, GuidingToPysicalEncounter48, antiAllergen, GuidingToPysicalEncounter49, Ready]
+    [
+      `${soundUrl}IntroPart1(Male).mp3`, 
+      allergySound, 
+      `${soundUrl}IntroPart2(Male).mp3`
+    ],
+    [
+      `${soundUrl}IntroPart3(Male).mp3`, 
+      allergySound, 
+      `${soundUrl}IntroPart4(Male).mp3`, 
+      allergySound, 
+      `${soundUrl}IntroPart5(Male).mp3`, 
+      `${soundUrl}IdentifyingTheDominantSense6.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingTheDominantSense7.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingTheDominantSense8.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingTheDominantSense9.mp3`, 
+      allergySound, 
+      Ready
+    ],
+    [
+      `${soundUrl}GuidedRelaxation1-10.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingAnti-Allergen12.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingAnti-Allergen13.mp3`, 
+      allergySound, 
+      `${soundUrl}IdentifyingAnti-Allergen14.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}ExpandTheAnti-AllergenExperience16.mp3`, 
+      antiAllergen, 
+      `${soundUrl}ExpandTheAnti-AllergenExperience17.mp3`, 
+      antiAllergen, 
+      `${soundUrl}ExpandTheAnti-AllergenExperience18.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}ProtectiveImagery19.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}MemoryOfAllergyResponse1-20.mp3`, 
+      antiAllergen, 
+      Ready
+    ],
+    [
+      `${soundUrl}ConnectionToAnti-AllergenAndProtection1-21.mp3`, 
+      antiAllergen, 
+      `${soundUrl}ConnectionToAnti-AllergenAndProtection1-22.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}FinishingMemory1-23.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}MemoryOfAllergyResponse2-24.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}ConnectionToAnti-AllergenAndProtection2-25.mp3`, 
+      antiAllergen, 
+      `${soundUrl}ConnectionToAnti-AllergenAndProtection2-26.mp3`, 
+      antiAllergen, 
+      Ready
+    ],
+    [
+      `${soundUrl}FinishingMemory2-27.mp3`, 
+      allergySound, 
+      `${soundUrl}FinishingMemory2-28.mp3`, 
+      antiAllergen, 
+      Ready
+    ],
+    [
+      `${soundUrl}MemoryOfAllergyResponse3-29.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}ConnectionToAnti-AllergenAndProtection3-30.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}FinishingMemory3-31.mp3`, 
+      antiAllergen, 
+      `${soundUrl}FinishingMemory3-32.mp3`, 
+      allergySound, 
+      `${soundUrl}FinishingMemory3-33.mp3`, 
+      allergySound, 
+      `${soundUrl}FinishingMemory3-34.mp3`, 
+      allergySound, 
+      `${soundUrl}FinishingMemory3-35.mp3`, 
+      allergySound, 
+      `${soundUrl}FinishingMemory3-36.mp3`, 
+      antiAllergen, 
+      `${soundUrl}FinishingMemory3-37.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}FutureSituation38.mp3`, 
+      allergySound, 
+      `${soundUrl}FutureSituation39.mp3`, 
+      allergySound, 
+      `${soundUrl}FutureSituation40.mp3`, 
+      Ready
+    ],
+    [
+      `${soundUrl}ConnectionToAnti-Allergen41.mp3`, 
+      allergySound, 
+      `${soundUrl}ConnectionToAnti-Allergen42.mp3`, 
+      antiAllergen, 
+      `${soundUrl}ConnectionToAnti-Allergen43.mp3`, 
+      allergySound, 
+      `${soundUrl}ConnectionToAnti-Allergen44.mp3`, 
+      antiAllergen, 
+      Ready
+    ],
+    [
+      `${soundUrl}FinishingMemory4-45.mp3`, 
+      allergySound, 
+      Ready
+    ],
+    [
+      `${soundUrl}GuidingToPysicalEncounter46.mp3`, 
+      allergySound, 
+      `${soundUrl}GuidingToPysicalEncounter47.mp3`, 
+      allergySound, 
+      `${soundUrl}GuidingToPysicalEncounter48.mp3`, 
+      antiAllergen, 
+      `${soundUrl}GuidingToPysicalEncounter49.mp3`, 
+      Ready
+    ]
   ];
 
   const [index, setIndex] = useState(0);
