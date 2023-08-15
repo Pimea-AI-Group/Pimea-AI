@@ -12,10 +12,10 @@ export default function Treatment() {
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   if (location.state.user.gender === 'female') {
-    soundUrl += 'Female';
+    soundUrl += 'Female/';
   }
   else {
-    soundUrl += 'Male'
+    soundUrl += 'Male/'
   }
 
   const allergies = [
