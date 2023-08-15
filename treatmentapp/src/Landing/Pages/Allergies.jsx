@@ -46,12 +46,13 @@ export default function Allergies() {
 
     const handleButtonClick = async (e) => {
         e.preventDefault();
+        console.log(selectedAllergies);
 
         if (selectedAllergies.length = 0) {
             console.log("חובה לבחור אלרגיה");
             return;
         }
-        console.log(selectedAllergies);
+
         fetch('http://3.126.91.66:3000/AddAllergies', {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: 'post',
