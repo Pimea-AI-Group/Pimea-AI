@@ -19,6 +19,7 @@ export default function Allergies() {
     const nav = useNavigate();
     const location = useLocation();
     const email = location.state.user.email;
+    console.log(email);
     const [selectedAllergies, setSelectedAllergies] = useState([]);
 
     const handleCheckboxChange = (event) => {
