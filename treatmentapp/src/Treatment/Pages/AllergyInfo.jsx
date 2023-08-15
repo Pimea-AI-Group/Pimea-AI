@@ -58,7 +58,7 @@ export default function AllergyInfo() {
       .catch((err) => {
         console.log(err);
       })
-    nav('/treatment', { state: { allergy: selectedAllergy } });
+    nav('/treatment', { state: { allergy: selectedAllergy, user: user } });
   };
 
   const show = () => {
