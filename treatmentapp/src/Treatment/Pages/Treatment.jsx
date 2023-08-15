@@ -4,7 +4,6 @@ import Relaxed from '../Components/Relaxed';
 import AntiAllergen from '../Components/AntiAllergen';
 let soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
 const allergyUrl = `${soundUrl}Allergy/`;
-const Ready = `${soundUrl}Ready+To+Continue.mp3`;
 
 export default function Treatment() {
   const location = useLocation();

@@ -47,7 +47,7 @@ export default function Allergies() {
     const handleButtonClick = async (e) => {
         e.preventDefault();
 
-        if (selectedAllergies.length =0) {
+        if (selectedAllergies.length = 0) {
             console.log("חובה לבחור אלרגיה");
             return;
         }
@@ -90,7 +90,7 @@ export default function Allergies() {
             <h3>בבקשה לסמן רק אלרגיות שאינן מסכנות חיים</h3>
             <div className='allergyDiv'>
                 {renderAllergies}
-                <button style={{fontSize: `xxx-large`}} onClick={handleButtonClick}>המשך לקביעת פגישה</button>
+                <button style={{ fontSize: `xxx-large` }} onClick={handleButtonClick}>המשך לקביעת פגישה</button>
             </div>
         </div>
     );
