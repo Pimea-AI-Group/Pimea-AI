@@ -54,10 +54,8 @@ const antiAllergen = [
 ];
 
 export default function AntiAllergen(props) {
-  let nav = useNavigate();
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
   
-
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -65,10 +63,6 @@ export default function AntiAllergen(props) {
       props.setAntiAllergen(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`));
     }
 };
-  const handleButtonClick = (audio, buttonIndex) => {
-    setAntiAllergen(audio);
-    // Additional logic related to button click can go here
-  };
 
   // Function to render antiAllergens from antiAllergen
   const renderAntiAllergen = antiAllergen.map((allergen) => (
@@ -89,12 +83,10 @@ export default function AntiAllergen(props) {
 
   return (
     <div>
-      {antiAllergens.map((item, index) => (
-        <button key={index} onClick={() => handleButtonClick(item.audioName, index)}>
-          <img src={`${imageUrl}${item.imageName}.jpg`} alt={item.name} />
-          <span>{item.name}</span>
-        </button>
-      ))}
+      <h1>בבקשה בחר באנטי-אלרגן</h1>
+      <div className='Anti-Allergens-Div'>
+        {renderAntiAllergen}
+      </div>
     </div>
   );
 }
