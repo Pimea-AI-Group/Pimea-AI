@@ -12,7 +12,7 @@ export default function AllergyInfo() {
   const [selectedAllergy, setSelectedAllergy] = useState('');
   const [flag, setFlag] = useState(true);
   const [isDisclaimerChecked, setIsDisclaimerChecked] = useState(false);
-  const [flagDis, setFlagDis] = useState(false);
+  const [flagDis, setFlagDis] = useState(false); 
 
 
   const [formData, setFormData] = useState({
