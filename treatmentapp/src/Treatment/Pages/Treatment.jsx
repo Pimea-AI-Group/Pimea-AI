@@ -56,7 +56,7 @@ export default function Treatment() {
       Ready
     ],
     [
-      `${soundUrl}IdentifyingAnti-Allergen1.mp3`,
+      `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
       allergySound,
       `${soundUrl}IdentifyingAnti-Allergen12.mp3`,
       allergySound,
