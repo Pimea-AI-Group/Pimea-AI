@@ -5,18 +5,17 @@ import AntiAllergen from '../Components/AntiAllergen';
 let soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
 const allergyUrl = `${soundUrl}Allergy/`;
 const Ready = `${soundUrl}Ready+To+Continue.mp3`;
+const location = useLocation();
+if (location.state.user.gender === 'female') {
+  soundUrl += 'Female/';
+}
+else {
+  soundUrl += 'Male/'
+}
 
 export default function Treatment() {
-  const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
-
-  if (location.state.user.gender === 'female') {
-    soundUrl += 'Female/';
-  }
-  else {
-    soundUrl += 'Male/'
-  }
 
   const allergies = [
     { name: 'Cat', audio: `${allergyUrl}Cat.mp3`, screenName: 'חתולים' },
