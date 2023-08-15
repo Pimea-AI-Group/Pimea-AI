@@ -13,7 +13,7 @@ const allergiesArray = [
     { name: `Pine Bloom`, screenName: `פריחת עץ האורן` }
 ]
 
-export default function SelectAllergy() {
+export default function SelectAllergy(props) {
     const location = useLocation();
     const selectedAllergyArray = location.state.user.allergies;
 
