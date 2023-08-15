@@ -12,6 +12,7 @@ export default function LogIn() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.user);
         nav('/allergyinfo', { state: { user: data.user } });
       })
       .catch((err) => {
