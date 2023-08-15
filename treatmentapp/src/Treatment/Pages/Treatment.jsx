@@ -113,48 +113,10 @@ export default function Treatment() {
   const [batch, setBatch] = useState(0);
   const [isBatchCompleted, setIsBatchCompleted] = useState(false);
   const [isRelaxSound, setIsRelaxSound] = useState(false);
-  const [listening, setListening] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const recognition = useRef(null);
   const audioRef = useRef();
   const [flag, setFlag] = useState(false);
 
-  const handleVoiceRecognitionStart = () => {
-    recognition.current = new window.webkitSpeechRecognition();
-    recognition.current.continuous = true;
-    recognition.current.interimResults = true;
-    recognition.current.onresult = (event) => {
-      const transcript = Array.from(event.results)
-        .map((result) => result[0])
-        .map((result) => result.transcript)
-        .join('');
-      if (event.results[0].isFinal) {
-        if (transcript.toLowerCase() === 'yes') {
-          handleYesClick();
-        } else if (transcript.toLowerCase() === 'no') {
-          handleNoClick();
-        }
-      }
-    };
-    recognition.current.start();
-    setListening(true);
-  };
-
-  const handleVoiceRecognitionStop = () => {
-    if (recognition.current) {
-      recognition.current.stop();
-      setListening(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isBatchCompleted && !listening) {
-      handleVoiceRecognitionStart();
-    } else if (!isBatchCompleted && listening) {
-      handleVoiceRecognitionStop();
-    }
-    return () => handleVoiceRecognitionStop();
-  }, [isBatchCompleted]);
 
   useEffect(() => {
     if (batch === 2 && (index === 4 || index === 6)) {
@@ -178,12 +140,10 @@ export default function Treatment() {
     if (isRelaxSound) {
       setIsRelaxSound(false);
       setIsBatchCompleted(true);
-      handleVoiceRecognitionStart();
     } else if (index < soundFiles[batch].length - 1) {
       setIndex(index + 1);
     } else {
       setIsBatchCompleted(true);
-      handleVoiceRecognitionStart();
     }
   };
 
@@ -201,30 +161,19 @@ export default function Treatment() {
     setIsPlaying(true);
   };
 
-  useEffect(() => {
-    let timer;
-    if (isBatchCompleted) {
-      timer = setTimeout(handleYesClick, 10000);
-    }
-    return () => clearTimeout(timer);
-  }, [isBatchCompleted]);
+  // useEffect(() => {
+  //   const audio = audioRef.current;
+  //   const playPromise = audio.play();
+  //   if (playPromise !== undefined) {
+  //     playPromise.then(() => {
+  //       // Automatic playback started!
+  //     }).catch((error) => {
+  //       // Auto-play was prevented
+  //       // Show a UI element to let the user manually start playback
+  //     });
+  //   }
+  // }, [isPlaying]);
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        // Automatic playback started!
-      }).catch((error) => {
-        // Auto-play was prevented
-        // Show a UI element to let the user manually start playback
-      });
-    }
-  }, [isPlaying]);
-
-  const handleButtonClick = (audio, buttonIndex) => {
-    setAntiAllergen(audio);
-  };
 
   return (
     <div>
