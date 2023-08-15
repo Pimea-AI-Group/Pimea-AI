@@ -10,6 +10,8 @@ export default function Treatment() {
   const location = useLocation();
   const allergy = location.state.allergy;
   const [antiAllergen, setAntiAllergen] = useState(null);
+  const audioRef = useRef();
+  const [flag, setFlag] = useState(false);
 
   if (location.state.user.gender === 'female') {
     soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Female/';
@@ -170,52 +172,67 @@ export default function Treatment() {
 
   const [index, setIndex] = useState(0);
   const [batch, setBatch] = useState(0);
-  const [isBatchCompleted, setIsBatchCompleted] = useState(false);
+  const [showRelaxedPrompt, setShowRelaxedPrompt] = useState(false);
   const [isRelaxSound, setIsRelaxSound] = useState(false);
-  const audioRef = useRef();
-  const [flag, setFlag] = useState(false);
 
-  // Handle audio play based on state changes
   useEffect(() => {
     const currentAudio = audioRef.current;
     setFlag(batch === 2 && (index === 4 || index === 6));
 
-    if (!currentAudio) return;
-
     if (isRelaxSound) {
-      currentAudio.src = relaxSounds[Math.floor(Math.random() * relaxSounds.length)];
-    } else if (!isBatchCompleted) {
+      currentAudio.src = playRandomRelaxSound();
+    } else {
       currentAudio.src = soundFiles[batch][index];
     }
 
     currentAudio.load();
     currentAudio.play();
 
-  }, [batch, index, isRelaxSound, soundFiles, relaxSounds]);
+  }, [batch, index, isRelaxSound]);
 
   // Handle the end of an audio
   const handleAudioEnd = () => {
-    setIsRelaxSound ? setIsBatchCompleted(true) : setIndex(index + 1);
-    setIsRelaxSound(false);
+    if (isRelaxSound) {
+      setShowRelaxedPrompt(false);
+      setIsRelaxSound(false);
+      setNext();
+    } else if (index + 1 < soundFiles[batch].length) {
+      setIndex(index + 1);
+    } else {
+      setShowRelaxedPrompt(true); // Show the relaxed prompt after each batch
+    }
   };
 
   // Click handlers
   const handleYesClick = () => {
     setBatch(batch + 1);
     setIndex(0);
-    setIsBatchCompleted(false);
+    setShowRelaxedPrompt(false);
   };
 
-  const handleNoClick = () => setIsRelaxSound(true);
+  const handleNoClick = () => {
+    setIsRelaxSound(true);
+  };
 
+  const playRandomRelaxSound = () => {
+    const randomIndex = Math.floor(Math.random() * relaxSounds.length);
+    return relaxSounds[randomIndex];
+  };
+
+  const setNext = () => {
+    if (batch + 1 < soundFiles.length) {
+      setBatch(batch + 1);
+      setIndex(0);
+    }
+  };
 
   return (
     <div>
       <h1>דימיון מודרך</h1>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
-        <source src={isRelaxSound ? relaxSounds[Math.floor(Math.random() * relaxSounds.length)] : soundFiles[batch][index]} type="audio/mpeg" />
+        <source src={isRelaxSound ? playRandomRelaxSound() : soundFiles[batch][index]} type="audio/mpeg" />
       </audio>
-      {isBatchCompleted && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
+      {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
       {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
     </div>
   );
