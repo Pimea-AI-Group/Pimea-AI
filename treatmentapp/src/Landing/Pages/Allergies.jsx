@@ -51,7 +51,7 @@ export default function Allergies() {
             console.log("חובה לבחור אלרגיה");
             return;
         }
-
+        console.log(selectedAllergies);
         fetch('http://3.126.91.66:3000/AddAllergies', {
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             method: 'post',
