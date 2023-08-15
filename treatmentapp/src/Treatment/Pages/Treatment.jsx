@@ -35,16 +35,16 @@ export default function Treatment() {
   const relaxSounds = [`${soundUrl}GuidedRelaxation1-10.mp3`, `${soundUrl}GuidedRelaxation2-15.mp3`];
   const soundFiles = [
     [
-      `${soundUrl}IntroPart1(Male).mp3`,
+      `${soundUrl}IntroPart1.mp3`,
       allergySound,
-      `${soundUrl}IntroPart2(Male).mp3`
+      `${soundUrl}IntroPart2.mp3`
     ],
     [
-      `${soundUrl}IntroPart3(Male).mp3`,
+      `${soundUrl}IntroPart3.mp3`,
       allergySound,
-      `${soundUrl}IntroPart4(Male).mp3`,
+      `${soundUrl}IntroPart4.mp3`,
       allergySound,
-      `${soundUrl}IntroPart5(Male).mp3`,
+      `${soundUrl}IntroPart5.mp3`,
       `${soundUrl}IdentifyingTheDominantSense6.mp3`,
       allergySound,
       `${soundUrl}IdentifyingTheDominantSense7.mp3`,
@@ -56,7 +56,7 @@ export default function Treatment() {
       Ready
     ],
     [
-      `${soundUrl}GuidedRelaxation1-10.mp3`,
+      `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
       allergySound,
       `${soundUrl}IdentifyingAnti-Allergen12.mp3`,
       allergySound,
