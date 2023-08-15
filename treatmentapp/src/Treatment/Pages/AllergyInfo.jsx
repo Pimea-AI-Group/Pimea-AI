@@ -192,8 +192,7 @@ export default function AllergyInfo() {
                 checked={isDisclaimerChecked}
                 onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)}
               />
-              <button style={{background: 'none'}} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</button>
-              {/* {showDisclaimer()} */}
+              <label style={{background: 'none', color: 'black'}} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</label>
               {flagDis && <Disclaimer />}
             </label>
           </form>

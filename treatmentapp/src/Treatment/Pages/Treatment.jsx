@@ -54,7 +54,7 @@ const GuidingToPysicalEncounter46 = `${soundUrl}GuidingToPysicalEncounter46.mp3`
 const GuidingToPysicalEncounter47 = `${soundUrl}GuidingToPysicalEncounter47.mp3`;
 const GuidingToPysicalEncounter48 = `${soundUrl}GuidingToPysicalEncounter48.mp3`;
 const GuidingToPysicalEncounter49 = `${soundUrl}GuidingToPysicalEncounter49.mp3`;
-const Cat = `${soundUrl}Allergy/Cat.mp3`;
+// const Cat = `${soundUrl}Allergy/Cat.mp3`;
 const Dog = `${soundUrl}Allergy/Dog.mp3`;
 const Grass = `${soundUrl}Allergy/Grass.mp3`;
 const DustMites = `${soundUrl}Allergy/Dust Bunny.mp3`;
@@ -71,7 +71,7 @@ export default function Treatment() {
   const [antiAllergen, setAntiAllergen] = useState(null);
 
   const allergies = [
-    { name: 'Cat', audio: Cat, screenName: 'חתולים' },
+    { name: 'Cat', audio: `${soundUrl}Allergy/Cat.mp3`, screenName: 'חתולים' },
     { name: 'Dog', audio: Dog, screenName: 'כלבים' },
     { name: 'Grass', audio: Grass, screenName: 'דשא' },
     { name: 'Dust Bunny', audio: DustMites, screenName: 'קרדית האבק' },
