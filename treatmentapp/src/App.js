@@ -8,6 +8,7 @@ import Allergies from './Landing/Pages/Allergies';
 import CalandlyLink from './Landing/Components/CalendlyLink';
 import AllergyInfo from './Treatment/Pages/AllergyInfo';
 import Admin from './Admin/Pages/Admin';
+import Contact from './Contact';
 
 // Constant containing the base audio URL
 const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
@@ -49,6 +50,7 @@ function App() {
           <Route path='/admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
+      <Contact />
     </div>
   );
 }

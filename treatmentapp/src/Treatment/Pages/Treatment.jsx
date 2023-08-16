@@ -199,7 +199,7 @@ export default function Treatment() {
     } else if (index + 1 < soundFiles[batch].length) {
       setIndex(index + 1);
     } else {
-      setShowRelaxedPrompt(true); // Show the relaxed prompt after each batch
+      setShowRelaxedPrompt(true);
     }
   };
 
