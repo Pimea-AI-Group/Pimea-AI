@@ -74,6 +74,9 @@ export default function AllergyInfo() {
 
   return (
     <div>
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
       {flag ? (
         <SelectAllergy setSelectedAllergy={setSelectedAllergy} setFlag={setFlag} />
       ) : (
