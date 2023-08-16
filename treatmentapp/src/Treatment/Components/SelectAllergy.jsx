@@ -41,6 +41,7 @@ export default function SelectAllergy(props) {
                 } else {
                     return null;
                 }
+                <br />
             })}
         </div>
     )
