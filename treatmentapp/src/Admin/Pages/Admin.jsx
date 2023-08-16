@@ -15,6 +15,11 @@ export default function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password != 'PIMEA1234') {
+      alert('סיסמא לא נכונה');
+      return;
+    }
+
     fetch(`http://3.126.91.66:3000/GetUserDataByEmail?email=${email}`, {
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       method: 'get',

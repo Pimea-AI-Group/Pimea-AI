@@ -12,7 +12,7 @@ export default function AllergyInfo() {
   const [selectedAllergy, setSelectedAllergy] = useState('');
   const [flag, setFlag] = useState(true);
   const [isDisclaimerChecked, setIsDisclaimerChecked] = useState(false);
-  const [flagDis, setFlagDis] = useState(false); 
+  const [flagDis, setFlagDis] = useState(false);
 
 
   const [formData, setFormData] = useState({
@@ -174,7 +174,7 @@ export default function AllergyInfo() {
             )}
             <br />
             <label>
-              כמה אתה סובל מאלרגיה זו (1-10): להוסיף (כאשר 1 מסמל כלל לא, ו 10 מסמל מאוד)
+              כמה אתה סובל מאלרגיה זו בסולם של 1-10, כאשר 1 מסמל בכלל לא, ו 10 מסמל מאוד או בלתי נסבל.
               <input
                 type="number"
                 name="sufferScale"
@@ -192,7 +192,7 @@ export default function AllergyInfo() {
                 checked={isDisclaimerChecked}
                 onChange={() => setIsDisclaimerChecked(!isDisclaimerChecked)}
               />
-              <label style={{background: 'none', color: 'black'}} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</label>
+              <label style={{ background: 'none', color: 'black' }} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</label>
               {flagDis && <Disclaimer />}
             </label>
           </form>
