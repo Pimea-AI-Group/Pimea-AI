@@ -149,7 +149,7 @@ export default function Treatment() {
   useEffect(() => {
     const currentAudio = audioRef.current;
     setFlag(batch === 2 && (index === 4 || index === 6));
-    
+
     if (isRelaxSound) {
       currentAudio.src = relaxSounds[relaxIndex];
     } else {
@@ -173,7 +173,7 @@ export default function Treatment() {
     else if (batch + 1 < soundFiles.length) {
       setBatch(batch + 1);
       setIndex(0);
-    } 
+    }
     // If relax sounds are being played, determine the next action
     else if (isRelaxSound) {
       if (relaxIndex + 1 < relaxSounds.length) {
@@ -209,26 +209,20 @@ export default function Treatment() {
     }
   };
 
+  const [showAntiAllergen, setShowAntiAllergen] = useState(true);
+
+  const handleAntiAllergenSelected = (selectedAudio) => {
+    setShowAntiAllergen(false);
+    // Set the selected anti-allergen's audio to the audioRef's source
+    audioRef.current.src = selectedAudio;
+    audioRef.current.play();
+  };
+
   return (
     <div>
-      <h1>דימיון מודרך</h1>
-      <audio ref={audioRef} onEnded={handleAudioEnd} controls>
-        <source src={soundFiles[batch][index]} type="audio/mpeg" />
-      </audio>
-      {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-
-      {batch === 2 && (
-        <>
-          {/* Yes and No buttons */}
-          <button onClick={handleYesClick}>Yes</button>
-          <button onClick={handleNoClick}>No</button>
-        </>
-      )}
-
-      {batch === 3 && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
-
-      {batch === 4 && <button onClick={handleYesClick}>Yes</button>}
-
+      {showAntiAllergen}
+        <AntiAllergen onSelected={handleAntiAllergenSelected} /> 
+      <audio ref={audioRef} onEnded={handleAudioEnd}></audio>
     </div>
   );
 }
