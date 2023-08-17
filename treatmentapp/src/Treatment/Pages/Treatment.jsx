@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Relaxed from '../Components/Relaxed';
 import AntiAllergen from '../Components/AntiAllergen';
+import Finish from '../Components/Finish';
 let soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
 const allergyUrl = `${soundUrl}Allergy/`;
 
@@ -178,9 +179,13 @@ export default function Treatment() {
     if (isRelaxSound) {
       currentAudio.src = playRandomRelaxSound();
     } else {
-      currentAudio.src = soundFiles[batch][index];
+      if ((batch == soundFiles.length - 1) && (index == soundFiles[soundFiles.length - 1].length)) {
+        <Finish />;
+      }
+      else {
+        currentAudio.src = soundFiles[batch][index];
+      }
     }
-
     currentAudio.load();
     currentAudio.play();
 
