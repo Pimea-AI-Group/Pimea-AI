@@ -149,12 +149,13 @@ export default function Treatment() {
   useEffect(() => {
     const currentAudio = audioRef.current;
     setFlag(batch === 2 && (index === 4 || index === 6));
-
+    
     if (isRelaxSound) {
       currentAudio.src = relaxSounds[relaxIndex];
     } else {
-      if ((batch == soundFiles.length - 1) && (index == soundFiles[soundFiles.length - 1].length)) {
-        <Finish />;
+      if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
+        // Trigger when all batches are played
+        // Logic to show the Finish component can be added here
       } else {
         currentAudio.src = soundFiles[batch][index];
       }
@@ -164,16 +165,24 @@ export default function Treatment() {
   }, [batch, index, isRelaxSound, relaxIndex]);
 
   const handleAudioEnd = () => {
-    if (isRelaxSound) {
+    // Move to the next sound within the batch
+    if (index + 1 < soundFiles[batch].length) {
+      setIndex(index + 1);
+    }
+    // Move to the next batch if the current batch is done
+    else if (batch + 1 < soundFiles.length) {
+      setBatch(batch + 1);
+      setIndex(0);
+    } 
+    // If relax sounds are being played, determine the next action
+    else if (isRelaxSound) {
       if (relaxIndex + 1 < relaxSounds.length) {
         setRelaxIndex(relaxIndex + 1);
       } else {
         setShowRelaxedPrompt(false);
         setIsRelaxSound(false);
-        setNext();
+        // Logic for what should happen after the relax sounds have finished
       }
-    } else {
-      setShowRelaxedPrompt(true);
     }
   };
 

@@ -104,7 +104,7 @@ div > div {
 .antiAllergenCheckbox img,
 .allergyCheckbox img,
 .symptomCheckbox img {
-  width: 100px;
+  width: 150px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
