@@ -132,7 +132,6 @@ export default function Treatment() {
       `${soundUrl}FinishingMemory3-36.mp3`,
       antiAllergen,
       `${soundUrl}FinishingMemory3-37.mp3`,
-      Ready
     ],
     [
       `${soundUrl}FutureSituation38.mp3`,
@@ -151,12 +150,10 @@ export default function Treatment() {
       allergySound,
       `${soundUrl}ConnectionToAnti-Allergen44.mp3`,
       antiAllergen,
-      Ready
     ],
     [
       `${soundUrl}FinishingMemory4-45.mp3`,
       allergySound,
-      Ready
     ],
     [
       `${soundUrl}GuidingToPysicalEncounter46.mp3`,
@@ -166,7 +163,6 @@ export default function Treatment() {
       `${soundUrl}GuidingToPysicalEncounter48.mp3`,
       antiAllergen,
       `${soundUrl}GuidingToPysicalEncounter49.mp3`,
-      Ready
     ]
   ];
 
