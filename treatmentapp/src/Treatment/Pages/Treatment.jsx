@@ -163,7 +163,6 @@ export default function Treatment() {
     currentAudio.play();
   }, [batch, index, isRelaxSound, relaxIndex]);
 
-  // Handle the end of an audio
   const handleAudioEnd = () => {
     if (isRelaxSound) {
       if (relaxIndex + 1 < relaxSounds.length) {
@@ -178,7 +177,6 @@ export default function Treatment() {
     }
   };
 
-  // Click handlers
   const handleYesClick = () => {
     setBatch(batch + 1);
     setIndex(0);
@@ -209,7 +207,19 @@ export default function Treatment() {
         <source src={soundFiles[batch][index]} type="audio/mpeg" />
       </audio>
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
-      {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
+
+      {batch === 2 && (
+        <>
+          {/* Yes and No buttons */}
+          <button onClick={handleYesClick}>Yes</button>
+          <button onClick={handleNoClick}>No</button>
+        </>
+      )}
+
+      {batch === 3 && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
+
+      {batch === 4 && <button onClick={handleYesClick}>Yes</button>}
+
     </div>
   );
 }
