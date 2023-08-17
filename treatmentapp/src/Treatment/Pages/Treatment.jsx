@@ -82,39 +82,18 @@ export default function Treatment() {
       `${soundUrl}ConnectionToAnti-AllergenAndProtection1-21.mp3`,
       antiAllergen,
       `${soundUrl}ConnectionToAnti-AllergenAndProtection1-22.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}FinishingMemory1-23.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}MemoryOfAllergyResponse2-24.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}ConnectionToAnti-AllergenAndProtection2-25.mp3`,
       antiAllergen,
       `${soundUrl}ConnectionToAnti-AllergenAndProtection2-26.mp3`,
       antiAllergen,
-      Ready
-    ],
-    [
       `${soundUrl}FinishingMemory2-27.mp3`,
       allergySound,
       `${soundUrl}FinishingMemory2-28.mp3`,
       antiAllergen,
-      Ready
-    ],
-    [
       `${soundUrl}MemoryOfAllergyResponse3-29.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}ConnectionToAnti-AllergenAndProtection3-30.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}FinishingMemory3-31.mp3`,
       antiAllergen,
       `${soundUrl}FinishingMemory3-32.mp3`,
@@ -128,16 +107,11 @@ export default function Treatment() {
       `${soundUrl}FinishingMemory3-36.mp3`,
       antiAllergen,
       `${soundUrl}FinishingMemory3-37.mp3`,
-    ],
-    [
       `${soundUrl}FutureSituation38.mp3`,
       allergySound,
       `${soundUrl}FutureSituation39.mp3`,
       allergySound,
       `${soundUrl}FutureSituation40.mp3`,
-      Ready
-    ],
-    [
       `${soundUrl}ConnectionToAnti-Allergen41.mp3`,
       allergySound,
       `${soundUrl}ConnectionToAnti-Allergen42.mp3`,
@@ -146,12 +120,8 @@ export default function Treatment() {
       allergySound,
       `${soundUrl}ConnectionToAnti-Allergen44.mp3`,
       antiAllergen,
-    ],
-    [
       `${soundUrl}FinishingMemory4-45.mp3`,
       allergySound,
-    ],
-    [
       `${soundUrl}GuidingToPysicalEncounter46.mp3`,
       allergySound,
       `${soundUrl}GuidingToPysicalEncounter47.mp3`,
