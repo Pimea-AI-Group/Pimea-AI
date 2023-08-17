@@ -107,7 +107,7 @@ export default function SelectAllergy(props) {
                 }
                 <br />
             })}
-            <button onClick={handleButtonClick()}>המשך</button>
+            <button onClick={handleButtonClick}>המשך</button>
         </div>
     )
 }
