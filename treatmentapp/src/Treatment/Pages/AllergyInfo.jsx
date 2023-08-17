@@ -74,42 +74,6 @@ export default function AllergyInfo() {
 
   return (
     <div>
-      <label>
-        האם אתה מוכן להשקיע (זמן/כסף) כדי להיפתר מהאלרגיות מהן אתה סובל, או להפחית אותן משמעותית, ללא צורך בנטילת תרופות? בסולם של 1-10 (כאשר 1 מסמל כלל לא, ו 10 מסמל המון)
-        <input
-          type="number"
-          name="comitment"
-          required
-        />
-      </label>
-      <br />
-      <label>
-        כמה היית מוכן לשלם על טיפול מהסוג הזה מתוך הנחה/אמונה/תקווה שהוא יהיה יעיל לתקופה ארוכה? אפשרויות לבחירה אחת: 0, 25,  50, 100, 150  (ש"ח)
-        <select
-          name="payment"
-          required
-        >
-          <option value="">בחר</option>
-          <option value="0">0</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-          <option value="150">150</option>
-        </select>
-      </label>
-      <br />
-      <label>
-        האם אתה מחוייב לעצמך להשתתף באופן פעיל בתהליך ההנחיה שבמערכת שלנו כדי להגביר את הסיכוי להפחתת הרגישות האלרגית שלך?
-        <select
-          name="obligated"
-          required
-        >
-          <option value="">בחר</option>
-          <option value="yes">כן</option>
-          <option value="no">לא</option>
-        </select>
-      </label>
-      <br />
       {flag ? (
         <SelectAllergy setSelectedAllergy={setSelectedAllergy} setFlag={setFlag} />
       ) : (
