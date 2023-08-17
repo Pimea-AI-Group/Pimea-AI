@@ -72,9 +72,7 @@ export default function Treatment() {
       `${soundUrl}ExpandTheAnti-AllergenExperience17.mp3`,
       antiAllergen,
       `${soundUrl}ExpandTheAnti-AllergenExperience18.mp3`,
-      Ready
-    ],
-    [
+      allergySound,
       `${soundUrl}ProtectiveImagery19.mp3`,
       Ready
     ],
