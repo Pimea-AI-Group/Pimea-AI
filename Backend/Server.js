@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema({
   phoneNumber: String,
   city: String,
   password: String,
+  commitment: Number,
+  money: Number,
+  obligated: Boolean,
   allergies: [{
     name: String,
     allergyDiagnosed: String,
@@ -61,7 +64,7 @@ app.post('/AddAllergyInfo', async (req, res) => {
   const updatedAllergy = {
     ...user.allergies[allergyIndex],
     ...formData,
-    name: user.allergies[allergyIndex].name, 
+    name: user.allergies[allergyIndex].name,
   };
 
   user.allergies[allergyIndex] = updatedAllergy;
@@ -82,6 +85,16 @@ app.post('/AddAllergies', (req, res) => {
   update(req.body.email, req.body.selectedAllergies);
 });
 
+app.post('/AddAnswers', (req, res) => {
+  const update = async (email, commitment, money, obligated) => {
+    await User.findOneAndUpdate(
+      { email },
+      { commitment, money, obligated }
+    );
+    res.json({ msg: 'Answers Added!' });
+  }
+  update(req.body.email, req.body.commitment, req.body.money, req.body.obligated);
+});
 
 app.get('/GetUserData', (req, res) => {
   const getUser = async (password) => {
@@ -98,7 +111,7 @@ app.get('/GetUserDataByEmail', (req, res) => {
     const user = await User.findOne(
       { email },
     );
-    res.json( user );
+    res.json(user);
   }
   getUser(req.query.email);
 });
