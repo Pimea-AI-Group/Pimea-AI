@@ -12,6 +12,7 @@ export default function Treatment() {
   const [antiAllergen, setAntiAllergen] = useState(null);
   const audioRef = useRef();
   const [flag, setFlag] = useState(false);
+  const [relaxIndex, setRelaxIndex] = useState(0);
 
   if (location.state.user.gender === 'female') {
     soundUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/Female/';
@@ -33,7 +34,7 @@ export default function Treatment() {
 
   const allergySound = allergies.find(a => a.name === allergy).audio;
 
-  const relaxSounds = [`${soundUrl}GuidedRelaxation1-10.mp3`, `${soundUrl}GuidedRelaxation2-15.mp3`];
+  const relaxSounds = [`${soundUrl}Relax+1.mp3`, `${soundUrl}Relax+2.mp3`];
   const soundFiles = [
     [
       `${soundUrl}IntroPart1.mp3`,
@@ -56,6 +57,7 @@ export default function Treatment() {
       allergySound,
       Ready
     ],
+    // קובצי קול 9.2 + 10
     [
       `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
       allergySound,
@@ -64,6 +66,7 @@ export default function Treatment() {
       `${soundUrl}IdentifyingAnti-Allergen13.mp3`,
       allergySound,
       `${soundUrl}IdentifyingAnti-Allergen14.mp3`,
+      `${soundUrl}GuidedRelaxation2-15.mp3`,
       Ready
     ],
     [
@@ -76,6 +79,7 @@ export default function Treatment() {
       `${soundUrl}ProtectiveImagery19.mp3`,
       Ready
     ],
+    // רק כפתור YES
     [
       `${soundUrl}MemoryOfAllergyResponse1-20.mp3`,
       antiAllergen,
@@ -142,7 +146,7 @@ export default function Treatment() {
     setFlag(batch === 2 && (index === 4 || index === 6));
 
     if (isRelaxSound) {
-      currentAudio.src = playRandomRelaxSound();
+      currentAudio.src = relaxSounds[relaxIndex];
     } else {
       if ((batch == soundFiles.length - 1) && (index == soundFiles[soundFiles.length - 1].length)) {
         <Finish />;
@@ -154,16 +158,19 @@ export default function Treatment() {
     currentAudio.load();
     currentAudio.play();
 
-  }, [batch, index, isRelaxSound]);
+  }, [batch, index, isRelaxSound, relaxIndex]);
 
   // Handle the end of an audio
   const handleAudioEnd = () => {
     if (isRelaxSound) {
-      setShowRelaxedPrompt(false);
-      setIsRelaxSound(false);
-      setNext();
-    } else if (index + 1 < soundFiles[batch].length) {
-      setIndex(index + 1);
+      // Move to next relax sound, if at end reset relax index and continue with the process
+      if (relaxIndex + 1 < relaxSounds.length) {
+        setRelaxIndex(relaxIndex + 1);
+      } else {
+        setShowRelaxedPrompt(false);
+        setIsRelaxSound(false);
+        setNext();
+      }
     } else {
       setShowRelaxedPrompt(true);
     }
@@ -178,6 +185,7 @@ export default function Treatment() {
 
   const handleNoClick = () => {
     setIsRelaxSound(true);
+    setRelaxIndex(0);  
   };
 
   const playRandomRelaxSound = () => {

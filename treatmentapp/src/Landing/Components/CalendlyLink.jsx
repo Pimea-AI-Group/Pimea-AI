@@ -12,6 +12,7 @@ export default function CalandlyLink() {
     <div>
       <h1>בחר מועד בו יהיה לך נוח שניצור איתך קשר</h1>
       <iframe src={calandlyLink} width="100%" height="1000" />
+      <h3>אם לא קיבלת מייל בבקשה תבדוק בתיבת הספאם</h3>
     </div>
   );
 }
