@@ -79,9 +79,6 @@ export default function Treatment() {
     [
       `${soundUrl}MemoryOfAllergyResponse1-20.mp3`,
       antiAllergen,
-      Ready
-    ],
-    [
       `${soundUrl}ConnectionToAnti-AllergenAndProtection1-21.mp3`,
       antiAllergen,
       `${soundUrl}ConnectionToAnti-AllergenAndProtection1-22.mp3`,

@@ -108,7 +108,7 @@ export default function AllergyInfo() {
             )}
             <br />
             <label>
-              כמה שנים קיימת האלרגיה אצליך?
+              כמה שנים קיימת האלרגיה אצלך?
               <input
                 type="number"
                 name="yearsWithAllergy"
