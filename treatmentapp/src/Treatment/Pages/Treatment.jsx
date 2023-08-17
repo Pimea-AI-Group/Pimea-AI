@@ -57,7 +57,9 @@ export default function Treatment() {
       allergySound,
       Ready
     ],
-    // קובצי קול 9.2 + 10
+    // place here yes/no button
+    // yes button will continue the audio filles
+    // no buttons will play the relaxSounds
     [
       `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
       allergySound,
@@ -69,6 +71,7 @@ export default function Treatment() {
       `${soundUrl}GuidedRelaxation2-15.mp3`,
       Ready
     ],
+    // place here the AntiAllergen component
     [
       `${soundUrl}ExpandTheAnti-AllergenExperience16.mp3`,
       antiAllergen,
@@ -79,7 +82,8 @@ export default function Treatment() {
       `${soundUrl}ProtectiveImagery19.mp3`,
       Ready
     ],
-    // רק כפתור YES
+    // place here only yes button
+    // only once it's pressed the audio will continue
     [
       `${soundUrl}MemoryOfAllergyResponse1-20.mp3`,
       antiAllergen,
@@ -141,6 +145,7 @@ export default function Treatment() {
   const [showRelaxedPrompt, setShowRelaxedPrompt] = useState(false);
   const [isRelaxSound, setIsRelaxSound] = useState(false);
 
+
   useEffect(() => {
     const currentAudio = audioRef.current;
     setFlag(batch === 2 && (index === 4 || index === 6));
@@ -150,20 +155,17 @@ export default function Treatment() {
     } else {
       if ((batch == soundFiles.length - 1) && (index == soundFiles[soundFiles.length - 1].length)) {
         <Finish />;
-      }
-      else {
+      } else {
         currentAudio.src = soundFiles[batch][index];
       }
     }
     currentAudio.load();
     currentAudio.play();
-
   }, [batch, index, isRelaxSound, relaxIndex]);
 
   // Handle the end of an audio
   const handleAudioEnd = () => {
     if (isRelaxSound) {
-      // Move to next relax sound, if at end reset relax index and continue with the process
       if (relaxIndex + 1 < relaxSounds.length) {
         setRelaxIndex(relaxIndex + 1);
       } else {
@@ -176,8 +178,8 @@ export default function Treatment() {
     }
   };
 
-  // Click handlers
-  const handleYesClick = () => {
+   // Click handlers
+   const handleYesClick = () => {
     setBatch(batch + 1);
     setIndex(0);
     setShowRelaxedPrompt(false);
