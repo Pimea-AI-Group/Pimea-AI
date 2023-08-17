@@ -178,8 +178,8 @@ export default function Treatment() {
     }
   };
 
-   // Click handlers
-   const handleYesClick = () => {
+  // Click handlers
+  const handleYesClick = () => {
     setBatch(batch + 1);
     setIndex(0);
     setShowRelaxedPrompt(false);
@@ -187,7 +187,7 @@ export default function Treatment() {
 
   const handleNoClick = () => {
     setIsRelaxSound(true);
-    setRelaxIndex(0);  
+    setRelaxIndex(0);
   };
 
   const playRandomRelaxSound = () => {
@@ -206,7 +206,7 @@ export default function Treatment() {
     <div>
       <h1>דימיון מודרך</h1>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls>
-        <source src={isRelaxSound ? playRandomRelaxSound() : soundFiles[batch][index]} type="audio/mpeg" />
+        <source src={soundFiles[batch][index]} type="audio/mpeg" />
       </audio>
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
       {flag && <AntiAllergen setAntiAllergen={setAntiAllergen} />}
