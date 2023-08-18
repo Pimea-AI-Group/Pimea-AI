@@ -82,8 +82,6 @@ export default function Treatment() {
       `${soundUrl}ProtectiveImagery19.mp3`,
       Ready
     ],
-    // place here only yes button
-    // only once it's pressed the audio will continue
     [
       `${soundUrl}MemoryOfAllergyResponse1-20.mp3`,
       antiAllergen,
@@ -150,7 +148,6 @@ export default function Treatment() {
     const currentAudio = audioRef.current;
     if ((batch === 2) && (index === 4)) {
       setShowAntiAllergen(true);
-      return;
     }
 
     if (isRelaxSound) {
@@ -188,28 +185,6 @@ export default function Treatment() {
     }
   };
 
-  const handleYesClick = () => {
-    setBatch(batch + 1);
-    setIndex(0);
-    setShowRelaxedPrompt(false);
-  };
-
-  const handleNoClick = () => {
-    setIsRelaxSound(true);
-    setRelaxIndex(0);
-  };
-
-  const playRandomRelaxSound = () => {
-    const randomIndex = Math.floor(Math.random() * relaxSounds.length);
-    return relaxSounds[randomIndex];
-  };
-
-  const setNext = () => {
-    if (batch + 1 < soundFiles.length) {
-      setBatch(batch + 1);
-      setIndex(0);
-    }
-  };
 
   const [showAntiAllergen, setShowAntiAllergen] = useState(false);
 
