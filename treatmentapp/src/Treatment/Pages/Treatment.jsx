@@ -189,7 +189,7 @@ export default function Treatment() {
   return (
     <div>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
-      {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} />}
+      {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} setAntiAllergen={setAntiAllergen} />}
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
     </div>
   );

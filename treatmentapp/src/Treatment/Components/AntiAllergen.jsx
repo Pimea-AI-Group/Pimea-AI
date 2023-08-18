@@ -52,17 +52,17 @@ const antiAllergen = [
   { name: 'כפפות צמר', imageName: 'Wool Gloves', audioName: 'Wool Gloves' },
 ];
 
-export default function AntiAllergen({ onSelected }) {
+export default function AntiAllergen({ onSelected, setAntiAllergen }) {
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
   
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
       onSelected(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`).href);
+      setAntiAllergen(value)
     }
   };
 
-  // Function to render antiAllergens from antiAllergen
   const renderAntiAllergen = antiAllergen.map((allergen) => (
     <label className={`antiAllergenCheckbox ${selectedAntiAllergen === allergen.audioName ? 'selectedAntiAllergen' : ''}`} key={allergen.name}>
       <img src={`${imageUrl}${allergen.imageName.replace(' ', '+')}.jpg`} alt={allergen.name} />
