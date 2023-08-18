@@ -12,7 +12,7 @@ import Contact from './Contact';
 
 // Constant containing the base audio URL
 const audioUrl = 'https://pimea-ai-bucket.s3.eu-west-1.amazonaws.com/mediabin/Sound/';
-const BackgroundAudio = audioUrl + 'Background+Music.mp3'; 
+const BackgroundAudio = audioUrl + 'Background+Music.mp3';
 
 function App() {
   const audioRef = useRef(null);  // Reference to the audio element
@@ -38,7 +38,7 @@ function App() {
   return (
     <div className='container'>
       {/* Audio component without autoPlay to avoid DOMException */}
-      <audio src={BackgroundAudio} ref={audioRef} controls loop />
+      <audio src={BackgroundAudio} ref={audioRef} autoPlay loop />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
