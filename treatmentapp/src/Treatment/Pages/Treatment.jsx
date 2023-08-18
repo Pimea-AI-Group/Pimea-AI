@@ -221,7 +221,7 @@ export default function Treatment() {
   return (
     <div>
       {showAntiAllergen}
-        <AntiAllergen onSelected={handleAntiAllergenSelected} /> 
+      <AntiAllergen onSelected={handleAntiAllergenSelected} />
       <audio ref={audioRef} onEnded={handleAudioEnd}></audio>
     </div>
   );
