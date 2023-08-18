@@ -148,7 +148,7 @@ export default function Treatment() {
 
   useEffect(() => {
     const currentAudio = audioRef.current;
-    if ((batch === 2)&&(index === 4 || index === 6)){
+    if ((batch === 2) && (index === 4 || index === 6)) {
       setShowAntiAllergen(true);
       return;
     }
@@ -223,9 +223,9 @@ export default function Treatment() {
 
   return (
     <div>
-      {showAntiAllergen}
-      <AntiAllergen onSelected={handleAntiAllergenSelected} />
       <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
+      {showAntiAllergen &&
+        <AntiAllergen onSelected={handleAntiAllergenSelected} />}
     </div>
   );
 }
