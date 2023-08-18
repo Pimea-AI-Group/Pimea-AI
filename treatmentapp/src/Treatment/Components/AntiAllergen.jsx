@@ -58,7 +58,6 @@ export default function AntiAllergen({ onSelected }) {
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
-      // setSelectedAntiAllergen(value);
       onSelected(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`).href);
     }
   };
