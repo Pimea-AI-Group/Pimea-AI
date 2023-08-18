@@ -148,14 +148,17 @@ export default function Treatment() {
 
   useEffect(() => {
     const currentAudio = audioRef.current;
-    setFlag(batch === 2 && (index === 4 || index === 6));
+    if ((batch === 2)&&(index === 4 || index === 6)){
+      setShowAntiAllergen(true);
+      return;
+    }
+    // setFlag(batch === 2 && (index === 4 || index === 6));
 
     if (isRelaxSound) {
       currentAudio.src = relaxSounds[relaxIndex];
     } else {
       if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
-        // Trigger when all batches are played
-        // Logic to show the Finish component can be added here
+        <Finish />
       } else {
         currentAudio.src = soundFiles[batch][index];
       }
@@ -209,7 +212,7 @@ export default function Treatment() {
     }
   };
 
-  const [showAntiAllergen, setShowAntiAllergen] = useState(true);
+  const [showAntiAllergen, setShowAntiAllergen] = useState(false);
 
   const handleAntiAllergenSelected = (selectedAudio) => {
     setShowAntiAllergen(false);
@@ -222,7 +225,7 @@ export default function Treatment() {
     <div>
       {showAntiAllergen}
       <AntiAllergen onSelected={handleAntiAllergenSelected} />
-      <audio ref={audioRef} onEnded={handleAudioEnd}></audio>
+      <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
     </div>
   );
 }
