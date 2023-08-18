@@ -64,6 +64,18 @@ button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+.allergyButton{
+  display: block;
+}
+
+.allergyButton:hover{
+  background-color: white;
+}
+
+.allergyButton::selection{
+  background-color: white;
+}
+
 .user-data {
   padding: 20px;
   border-radius: 8px;
