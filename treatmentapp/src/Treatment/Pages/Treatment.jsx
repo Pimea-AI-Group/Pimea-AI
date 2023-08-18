@@ -148,11 +148,10 @@ export default function Treatment() {
 
   useEffect(() => {
     const currentAudio = audioRef.current;
-    if ((batch === 2) && (index === 4 || index === 6)) {
+    if ((batch === 2) && (index === 4)) {
       setShowAntiAllergen(true);
       return;
     }
-    // setFlag(batch === 2 && (index === 4 || index === 6));
 
     if (isRelaxSound) {
       currentAudio.src = relaxSounds[relaxIndex];
@@ -216,7 +215,6 @@ export default function Treatment() {
 
   const handleAntiAllergenSelected = (selectedAudio) => {
     setShowAntiAllergen(false);
-    // Set the selected anti-allergen's audio to the audioRef's source
     audioRef.current.src = selectedAudio;
     audioRef.current.play();
   };
