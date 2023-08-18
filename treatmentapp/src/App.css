@@ -65,11 +65,12 @@ button[type="submit"]:hover {
 }
 
 .allergyButton{
-  display: block;
+  overflow: scroll;
 }
 
 .allergyButton:hover{
   background-color: white;
+  color: black;
 }
 
 .allergyButton::selection{

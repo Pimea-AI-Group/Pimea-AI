@@ -57,9 +57,6 @@ export default function Treatment() {
       allergySound,
       Ready
     ],
-    // place here yes/no button
-    // yes button will continue the audio filles
-    // no buttons will play the relaxSounds
     [
       `${soundUrl}IdentifyingAnti-Allergen11.mp3`,
       allergySound,
@@ -71,7 +68,6 @@ export default function Treatment() {
       `${soundUrl}GuidedRelaxation2-15.mp3`,
       Ready
     ],
-    // place here the AntiAllergen component
     [
       `${soundUrl}ExpandTheAnti-AllergenExperience16.mp3`,
       antiAllergen,
@@ -146,45 +142,31 @@ export default function Treatment() {
 
   useEffect(() => {
     const currentAudio = audioRef.current;
+
+    if (showRelaxedPrompt) {
+      return; // Don't load or play anything if the relaxed prompt is shown
+    }
+
     if ((batch === 2) && (index === 4)) {
       setShowAntiAllergen(true);
     }
 
-    if (isRelaxSound) {
-      currentAudio.src = relaxSounds[relaxIndex];
+    if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
+      <Finish />;
     } else {
-      if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
-        <Finish />
-      } else {
-        currentAudio.src = soundFiles[batch][index];
-      }
+      currentAudio.src = soundFiles[batch][index];
+      currentAudio.load();
+      currentAudio.play();
     }
-    currentAudio.load();
-    currentAudio.play();
-  }, [batch, index, isRelaxSound, relaxIndex]);
+  }, [batch, index, showRelaxedPrompt]);
 
   const handleAudioEnd = () => {
-    // Move to the next sound within the batch
     if (index + 1 < soundFiles[batch].length) {
       setIndex(index + 1);
-    }
-    // Move to the next batch if the current batch is done
-    else if (batch + 1 < soundFiles.length) {
-      setBatch(batch + 1);
-      setIndex(0);
-    }
-    // If relax sounds are being played, determine the next action
-    else if (isRelaxSound) {
-      if (relaxIndex + 1 < relaxSounds.length) {
-        setRelaxIndex(relaxIndex + 1);
-      } else {
-        setShowRelaxedPrompt(false);
-        setIsRelaxSound(false);
-        // Logic for what should happen after the relax sounds have finished
-      }
+    } else if (batch + 1 < soundFiles.length) {
+      setShowRelaxedPrompt(true); // Show the relaxed prompt after every batch
     }
   };
-
 
   const [showAntiAllergen, setShowAntiAllergen] = useState(false);
 
@@ -194,11 +176,21 @@ export default function Treatment() {
     audioRef.current.play();
   };
 
+  const handleYesClick = () => {
+    setShowRelaxedPrompt(false);
+    setBatch(batch + 1); // Move to the next batch
+    setIndex(0); // Reset the index
+  };
+
+  const handleNoClick = () => {
+    // Implement desired behavior when "No" is clicked. For now, it does nothing.
+};
+
   return (
     <div>
       <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
-      {showAntiAllergen &&
-        <AntiAllergen onSelected={handleAntiAllergenSelected} />}
+      {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} />}
+      {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
     </div>
   );
 }
