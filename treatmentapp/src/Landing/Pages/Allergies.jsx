@@ -85,7 +85,7 @@ export default function Allergies() {
             <h3>בבקשה לסמן רק אלרגיות שאינן מסכנות חיים</h3>
             <div className='allergyDiv'>
                 {renderAllergies}
-                <button style={{ fontSize: `xxx-large` }} onClick={handleButtonClick}>המשך לתיאום שיחה</button>
+                <button style={{ fontSize: `xx-large` }} onClick={handleButtonClick}>המשך לתיאום שיחה</button>
                 <h6>השיחה מיועדת עבור בדיקת התאמתך לתהליך ותערך כ-10 דקות</h6>
             </div>
         </div>

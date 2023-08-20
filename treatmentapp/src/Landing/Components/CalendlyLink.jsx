@@ -6,7 +6,7 @@ export default function CalandlyLink() {
   const firstName = location.state.user.firstName;
   const lastName = location.state.user.lastName;
   const email = location.state.user.email;
-  const calandlyLink = `https://calendly.com/pimea-ai/10min?back=1&month=2023-08?name=${encodeURIComponent(firstName + ' ' + lastName)}&email=${encodeURIComponent(email)}`;
+  const calandlyLink = `https://calendly.com/pimea-ai/10min?name=${encodeURIComponent(firstName + ' ' + lastName)}&email=${encodeURIComponent(email)}`;
 
   return (
     <div>
