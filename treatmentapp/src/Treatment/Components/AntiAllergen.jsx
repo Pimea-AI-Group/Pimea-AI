@@ -52,14 +52,14 @@ const antiAllergen = [
   { name: 'כפפות צמר', imageName: 'Wool Gloves', audioName: 'Wool Gloves' },
 ];
 
-export default function AntiAllergen({ onSelected, setAntiAllergen }) {
+export default function AntiAllergen({ onSelected, setAntiAllergen }, props) {
   const [selectedAntiAllergen, setSelectedAntiAllergen] = useState("");
   
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
       onSelected(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`).href);
-      setAntiAllergen(value);
+      props.setAntiAllergen(value);
     }
   };
 

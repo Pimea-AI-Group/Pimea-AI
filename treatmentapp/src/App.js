@@ -38,7 +38,7 @@ function App() {
   return (
     <div className='container'>
       {/* Audio component without autoPlay to avoid DOMException */}
-      <audio src={BackgroundAudio} ref={audioRef} autoPlay loop />
+      <audio src={BackgroundAudio} ref={audioRef} autoPlay loop controls />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />

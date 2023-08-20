@@ -144,7 +144,7 @@ export default function Treatment() {
     const currentAudio = audioRef.current;
 
     if (showRelaxedPrompt) {
-      return; // Don't load or play anything if the relaxed prompt is shown
+      return;
     }
 
     if ((batch === 2) && (index === 4)) {
@@ -164,7 +164,7 @@ export default function Treatment() {
     if (index + 1 < soundFiles[batch].length) {
       setIndex(index + 1);
     } else if (batch + 1 < soundFiles.length) {
-      setShowRelaxedPrompt(true); // Show the relaxed prompt after every batch
+      setShowRelaxedPrompt(true); 
     }
   };
 
@@ -188,7 +188,7 @@ export default function Treatment() {
 
   return (
     <div>
-      <audio ref={audioRef} onEnded={handleAudioEnd}></audio>
+      <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
       {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} setAntiAllergen={setAntiAllergen} />}
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
     </div>
