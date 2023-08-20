@@ -59,9 +59,8 @@ export default function AntiAllergen({ onSelected, setAntiAllergen }) {
     const { value, checked } = event.target;
     if (checked) {
       onSelected(new URL(`${soundUrl}${value.replace(' ', '%20')}.mp3`).href);
-      console.log(value);
       console.log(`${soundUrl}${value.replace(' ', '%20')}.mp3`);
-      setAntiAllergen(value);
+      setAntiAllergen(`${soundUrl}${value.replace(' ', '%20')}.mp3`);
     }
   };
 
