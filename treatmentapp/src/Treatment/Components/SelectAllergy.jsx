@@ -21,25 +21,25 @@ export default function SelectAllergy(props) {
     const [money, setMoney] = useState(0);
     const [obligated, setObligated] = useState(false);
 
-    // const handleButtonClick = async (e) => {
-    //     e.preventDefault();
+    const handleButtonClick = async (e) => {
+        e.preventDefault();
 
-    //     fetch('http://3.126.91.66:3000/AddAnswers', {
-    //         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-    //         method: 'post',
-    //         body: JSON.stringify({
-    //             email,
-    //             commitment, money, obligated
-    //         })
-    //     })
-    //         .then((res) => {
-    //             return res.json()
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    //     props.setFlag(false);
-    // };
+        // fetch('http://3.126.91.66:3000/AddAnswers', {
+        //     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        //     method: 'post',
+        //     body: JSON.stringify({
+        //         email,
+        //         commitment, money, obligated
+        //     })
+        // })
+        //     .then((res) => {
+        //         return res.json()
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     })
+        props.setFlag(false);
+    };
 
     const handleAllergyClick = (allergyName) => {
         props.setSelectedAllergy(`${allergyName.name}`);
