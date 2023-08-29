@@ -73,8 +73,12 @@ button[type="submit"]:hover {
   color: black;
 }
 
-.allergyButton::selection{
-  background-color: white;
+.allergyButton {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-data {

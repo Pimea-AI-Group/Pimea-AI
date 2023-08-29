@@ -62,6 +62,7 @@ export default function SelectAllergy(props) {
                             <button
                                 className={`allergyButton ${selectedAllergy === allergy.name ? 'selected' : ''}`}
                                 onClick={() => handleAllergyClick(allergy)}
+                                style={{ backgroundImage: `url(${imageUrl}${allergy.name}.jpg)` }}
                             >
                                 {matchingAllergy.screenName}
                             </button>
