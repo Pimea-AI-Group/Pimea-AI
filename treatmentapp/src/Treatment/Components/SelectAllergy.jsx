@@ -57,12 +57,12 @@ export default function SelectAllergy(props) {
                         className={`image-wrapper ${selectedAllergy === allergy.name ? 'selected' : ''}`}
                         key={allergy.name}
                     >
-                        <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
+                        {/* <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} /> */}
                         {matchingAllergy ? (
                             <button
                                 className={`allergyButton ${selectedAllergy === allergy.name ? 'selected' : ''}`}
                                 onClick={() => handleAllergyClick(allergy)}
-                                style={{ backgroundImage: `url(${imageUrl}${allergy.name}.jpg)` }}
+                                style={{ backgroundImage: `url(${imageUrl}${allergy.name.replace(/ /g, '%20')}.jpg)` }}
                             >
                                 {matchingAllergy.screenName}
                             </button>
