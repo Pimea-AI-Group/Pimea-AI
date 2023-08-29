@@ -126,7 +126,12 @@ div > div {
 
 .selectedAllergy,
 .selectedSymptom,
-.selectedAntiAllergen {
+.selectedAntiAllergen,
+.selected {
+  background-color: #f2f2f2; /* or any color you prefer */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
   background-color: #fff;
 }
 
