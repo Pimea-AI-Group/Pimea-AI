@@ -70,7 +70,7 @@ export default function AntiAllergen({ onSelected, setAntiAllergen }) {
         <input
           type="checkbox"
           value={allergen.audioName}
-          checked={selectedAntiAllergen === allergen.audioName}
+          // checked={selectedAntiAllergen === allergen.audioName}
           onChange={handleCheckboxChange}
         />
       </span>
