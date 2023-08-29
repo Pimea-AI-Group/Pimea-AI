@@ -52,19 +52,20 @@ export default function SelectAllergy(props) {
             <h1>באיזו אלרגיה נטפל היום?</h1><br />
             {selectedAllergyArray.map((allergy) => {
                 const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
-
                 return (
-                    <div key={allergy.name}>
+                    <div
+                        className={`image-wrapper ${selectedAllergy === allergy.name ? 'selected' : ''}`}
+                        key={allergy.name}
+                    >
                         <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
                         {matchingAllergy ? (
                             <button
-                                className={`allergyButton ${selectedAllergy === allergy.name ? 'selected' : ''}`} // Dynamic class for selected allergy
+                                className={`allergyButton ${selectedAllergy === allergy.name ? 'selected' : ''}`}
                                 onClick={() => handleAllergyClick(allergy)}
                             >
                                 {matchingAllergy.screenName}
                             </button>
                         ) : null}
-                        <br />
                     </div>
                 );
             })}

@@ -78,7 +78,9 @@ export default function AllergyInfo() {
         <SelectAllergy setSelectedAllergy={setSelectedAllergy} setFlag={setFlag} />
       ) : (
         <>
-          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך ל${selectedAllergy}`}</h1>
+          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך 
+          // ${selectedAllergy}
+          `}</h1>
           <form onSubmit={handleSubmit}>
             <label>
               האם האלרגיה אובחנה בעבר?
