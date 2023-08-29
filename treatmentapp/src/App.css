@@ -31,7 +31,6 @@ h1 {
 
 .admin-form label,
 label {
-  display: block;
   margin-bottom: 15px;
 }
 
@@ -62,10 +61,6 @@ button[type="submit"] {
 button:hover,
 button[type="submit"]:hover {
   background-color: #0056b3;
-}
-
-.allergyButton{
-  overflow: scroll;
 }
 
 .allergyButton:hover{
@@ -132,7 +127,7 @@ div > div {
 .selectedSymptom,
 .selectedAntiAllergen,
 .selected {
-  background-color: #f2f2f2; /* or any color you prefer */
+  background-color: green;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;

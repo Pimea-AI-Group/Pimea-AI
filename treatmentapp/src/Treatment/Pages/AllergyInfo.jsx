@@ -78,9 +78,7 @@ export default function AllergyInfo() {
         <SelectAllergy setSelectedAllergy={setSelectedAllergy} setFlag={setFlag} />
       ) : (
         <>
-          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך 
-          // ${selectedAllergy}
-          `}</h1>
+          <h1>{`נשמח לדעת מספר דברים בקשר לאלרגיה שלך `}</h1>
           <form onSubmit={handleSubmit}>
             <label>
               האם האלרגיה אובחנה בעבר?
@@ -196,6 +194,7 @@ export default function AllergyInfo() {
               <label style={{ background: 'none', color: 'blue', textDecorationLine: 'underline' }} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</label>
               {flagDis && <Disclaimer />}
             </label>
+            <br />
             <button id='submitBTN' type="submit">המשך</button>
           </form>
         </>
