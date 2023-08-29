@@ -151,9 +151,7 @@ export default function Treatment() {
       setShowAntiAllergen(true);
     }
 
-    if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
-      <Finish />;
-    } else {
+    else {
       currentAudio.src = soundFiles[batch][index];
       currentAudio.load();
       currentAudio.play();
@@ -164,7 +162,9 @@ export default function Treatment() {
     if (index + 1 < soundFiles[batch].length) {
       setIndex(index + 1);
     } else if (batch + 1 < soundFiles.length) {
-      setShowRelaxedPrompt(true); 
+      setShowRelaxedPrompt(true);
+    } else if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
+      <Finish />;
     }
   };
 
@@ -184,11 +184,11 @@ export default function Treatment() {
 
   const handleNoClick = () => {
     // Implement desired behavior when "No" is clicked. For now, it does nothing.
-};
+  };
 
   return (
     <div>
-      <audio ref={audioRef} onEnded={handleAudioEnd} ></audio>
+      <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
       {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} setAntiAllergen={setAntiAllergen} />}
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
     </div>
