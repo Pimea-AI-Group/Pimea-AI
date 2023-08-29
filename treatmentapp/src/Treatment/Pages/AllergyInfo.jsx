@@ -185,7 +185,6 @@ export default function AllergyInfo() {
             </label>
             <br />
             <br />
-            <button id='submitBTN' type="submit">המשך</button>
             <label>
               <input
                 type="checkbox"
@@ -195,6 +194,7 @@ export default function AllergyInfo() {
               <label style={{ background: 'none', color: 'blue', textDecorationLine: 'underline' }} onClick={() => setFlagDis(!flagDis)}>בבקשה אשר את תנאי השירות</label>
               {flagDis && <Disclaimer />}
             </label>
+            <button id='submitBTN' type="submit">המשך</button>
           </form>
         </>
       )

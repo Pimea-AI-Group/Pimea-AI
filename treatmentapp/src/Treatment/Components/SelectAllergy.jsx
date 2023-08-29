@@ -20,6 +20,7 @@ export default function SelectAllergy(props) {
     const [commitment, setCommitment] = useState('');
     const [money, setMoney] = useState(0);
     const [obligated, setObligated] = useState(false);
+    const [selectedAllergy, setSelectedAllergy] = useState(null);
 
     const handleButtonClick = async (e) => {
         e.preventDefault();
@@ -42,11 +43,31 @@ export default function SelectAllergy(props) {
     };
 
     const handleAllergyClick = (allergyName) => {
+        setSelectedAllergy(allergyName.name); // Set selected allergy
         props.setSelectedAllergy(`${allergyName.name}`);
     };
 
     return (
         <div>
+            <h1>באיזו אלרגיה נטפל היום?</h1><br />
+            {selectedAllergyArray.map((allergy) => {
+                const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
+
+                return (
+                    <div key={allergy.name}>
+                        <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
+                        {matchingAllergy ? (
+                            <button
+                                className={`allergyButton ${selectedAllergy === allergy.name ? 'selected' : ''}`} // Dynamic class for selected allergy
+                                onClick={() => handleAllergyClick(allergy)}
+                            >
+                                {matchingAllergy.screenName}
+                            </button>
+                        ) : null}
+                        <br />
+                    </div>
+                );
+            })}
             <label>
                 האם אתה מוכן להשקיע (זמן/כסף) כדי להיפטר מהאלרגיות מהן אתה סובל, או להפחית אותן משמעותית, ללא צורך בנטילת תרופות? בסולם של 1-10 (כאשר 1 מסמל כלל לא, ו 10 מסמל המון)
                 <input
@@ -88,25 +109,6 @@ export default function SelectAllergy(props) {
                 </select>
             </label>
             <br />
-            <h1>באיזו אלרגיה נטפל היום?</h1><br />
-            {selectedAllergyArray.map((allergy) => {
-                const matchingAllergy = allergiesArray.find((a) => `${a.name}` === `${allergy.name}`);
-                <img src={`${imageUrl}${allergy.name}.jpg`} alt={allergy.name} />
-                if (matchingAllergy) {
-                    return (
-                        <button
-                            className='allergyButton'
-                            key={allergy.name}
-                            onClick={() => handleAllergyClick(allergy)}
-                        >
-                            {matchingAllergy.screenName}
-                        </button>
-                    );
-                } else {
-                    return null;
-                }
-                <br />
-            })}
             <button onClick={handleButtonClick}>המשך</button>
         </div>
     )
