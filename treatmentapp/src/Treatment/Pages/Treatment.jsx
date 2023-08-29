@@ -138,7 +138,7 @@ export default function Treatment() {
   const [batch, setBatch] = useState(0);
   const [showRelaxedPrompt, setShowRelaxedPrompt] = useState(false);
   const [isRelaxSound, setIsRelaxSound] = useState(false);
-
+  const [showFinish, setShowFinish] = useState(false);
 
   useEffect(() => {
     const currentAudio = audioRef.current;
@@ -163,8 +163,8 @@ export default function Treatment() {
       setIndex(index + 1);
     } else if (batch + 1 < soundFiles.length) {
       setShowRelaxedPrompt(true);
-    } else if (batch == soundFiles.length - 1 && index == soundFiles[soundFiles.length - 1].length) {
-      <Finish />;
+    } else if (batch === soundFiles.length - 1 && index === soundFiles[soundFiles.length - 1].length - 1) {
+      setShowFinish(true);  // set showFinish to true when you've reached the end
     }
   };
 
@@ -191,6 +191,7 @@ export default function Treatment() {
       <audio ref={audioRef} onEnded={handleAudioEnd} controls></audio>
       {showAntiAllergen && <AntiAllergen onSelected={handleAntiAllergenSelected} setAntiAllergen={setAntiAllergen} />}
       {showRelaxedPrompt && <Relaxed onYesClick={handleYesClick} onNoClick={handleNoClick} />}
+      {showFinish && <Finish />} {/* conditionally render the Finish component */}
     </div>
   );
 }
