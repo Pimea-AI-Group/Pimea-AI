@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className='container'>
-      <audio src={BackgroundAudio} ref={audioRef} autoPlay loop controls />
+      <audio src={BackgroundAudio} ref={audioRef} autoPlay loop />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
